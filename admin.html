@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin & Studio Command Center | My Studios</title>
+  <meta name="description" content="Centralized admin controls for My Studios: Live stage booking approvals, studio room telemetry, equipment stock management, and user permissions.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700;1,900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="https://img.icons8.com/ios-filled/50/e50914/video-trimming.png">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+            serif: ['Playfair Display', 'Cormorant Garamond', 'Georgia', 'serif'],
+            heading: ['Outfit', 'Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              red: '#e50914',
+              redHover: '#cc0812',
+              dark: '#07080c',
+              card: '#0e111a',
+              cardGlow: 'rgba(229, 9, 20, 0.25)'
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="assets/common.css">
+</head>
+<body class="bg-[#07080c] text-slate-100 min-h-screen selection:bg-red-600 selection:text-white font-sans">
+
+  <!-- Header -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-[#07080c]/85 backdrop-blur-xl border-b border-red-500/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-red-600 to-red-800 p-0.5 flex items-center justify-center shadow-lg shadow-red-600/30 group-hover:scale-105 transition">
+          <div class="w-full h-full bg-[#110507] rounded-[10px] flex items-center justify-center">
+            <span class="text-red-500 font-bold text-sm">((•))</span>
+          </div>
+        </div>
+        <div>
+          <span class="font-bold text-base sm:text-lg tracking-tight text-white group-hover:text-red-400 transition block leading-none">My Studios</span>
+          <span class="text-[9px] uppercase font-mono tracking-[0.25em] text-slate-400 block mt-1">ADMIN CENTER</span>
+        </div>
+      </a>
+
+      <!-- Pill Nav -->
+      <nav class="hidden md:flex items-center gap-1 bg-[#12141f]/90 border border-white/10 px-4 py-1.5 rounded-full shadow-inner text-xs font-medium text-slate-300">
+        <a href="index.html" class="px-3 py-1 rounded-full hover:text-red-400 transition">Events</a>
+        <a href="services.html" class="px-3 py-1 rounded-full hover:text-red-400 transition">Services</a>
+        <a href="portfolio.html" class="px-3 py-1 rounded-full hover:text-red-400 transition">Showcase</a>
+        <a href="admin.html" class="px-3 py-1 rounded-full text-white bg-white/10 text-red-400 transition">Admin Controls</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-xs font-mono text-red-400">
+          <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+          <span>ADMIN PRIVILEGES</span>
+        </div>
+        <a href="index.html" class="px-4 py-2 rounded-full bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-200 transition">
+          Exit to Hub ➜
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-32 pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- KPI Revenue & Metric Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 animate-on-scroll">
+      
+      <div class="glass-panel p-6 rounded-3xl border border-white/10 relative overflow-hidden bg-[#0d0f19]">
+        <div class="flex items-center justify-between text-slate-400 text-xs font-mono uppercase">
+          <span>Monthly Revenue</span>
+          <span class="text-emerald-400 font-bold">+18.4%</span>
+        </div>
+        <h3 class="text-3xl font-bold font-serif text-white mt-2">$48,250</h3>
+        <p class="text-[11px] text-slate-400 mt-1 font-mono">34 Paid Soundstage Sessions</p>
+        <div class="mt-4 w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+          <div class="bg-gradient-to-r from-red-600 to-amber-500 h-full w-[82%]"></div>
+        </div>
+      </div>
+
+      <div class="glass-panel p-6 rounded-3xl border border-white/10 relative overflow-hidden bg-[#0d0f19]">
+        <div class="flex items-center justify-between text-slate-400 text-xs font-mono uppercase">
+          <span>Active Bookings</span>
+          <span class="text-red-400 font-bold">18 Today</span>
+        </div>
+        <h3 class="text-3xl font-bold font-serif text-white mt-2">128 Hours</h3>
+        <p class="text-[11px] text-slate-400 mt-1 font-mono">Stage Alpha & Beta at Capacity</p>
+        <div class="mt-4 w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+          <div class="bg-gradient-to-r from-red-600 to-red-400 h-full w-[90%]"></div>
+        </div>
+      </div>
+
+      <div class="glass-panel p-6 rounded-3xl border border-white/10 relative overflow-hidden bg-[#0d0f19]">
+        <div class="flex items-center justify-between text-slate-400 text-xs font-mono uppercase">
+          <span>Stage Utilization</span>
+          <span class="text-cyan-400 font-bold">Peak</span>
+        </div>
+        <h3 class="text-3xl font-bold font-serif text-white mt-2">87.5%</h3>
+        <p class="text-[11px] text-slate-400 mt-1 font-mono">Avg Booking Length: 3.8 Hrs</p>
+        <div class="mt-4 w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+          <div class="bg-gradient-to-r from-cyan-500 to-purple-500 h-full w-[87%]"></div>
+        </div>
+      </div>
+
+      <div class="glass-panel p-6 rounded-3xl border border-white/10 relative overflow-hidden bg-[#0d0f19]">
+        <div class="flex items-center justify-between text-slate-400 text-xs font-mono uppercase">
+          <span>Fiber Network Uptime</span>
+          <span class="text-emerald-400 font-bold">Optimal</span>
+        </div>
+        <h3 class="text-3xl font-bold font-serif text-white mt-2">99.98%</h3>
+        <p class="text-[11px] text-slate-400 mt-1 font-mono">Bandwidth: 9.84 Gbps Live</p>
+        <div class="mt-4 w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+          <div class="bg-gradient-to-r from-emerald-500 to-amber-500 h-full w-[99%]"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Live Telemetry & IoT Controls -->
+    <div class="glass-panel p-8 rounded-3xl border border-white/10 mb-12 bg-[#0d0f19]">
+      <div class="flex items-center justify-between pb-4 mb-6 border-b border-slate-800">
+        <div class="flex items-center gap-3">
+          <span class="text-xl text-red-500">🎛️</span>
+          <div>
+            <h3 class="text-xl font-bold font-serif text-white">Live Studio Telemetry & Environmental Controls</h3>
+            <p class="text-xs text-slate-400">Direct hardware overrides for all soundstages.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
+          <label class="block text-xs font-mono uppercase text-slate-300 mb-2">DMX Overhead Lighting Rig Preset</label>
+          <select id="adminLightingPreset" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2.5 text-xs text-slate-100 focus:border-red-500 focus:outline-none">
+            <option value="Cyber Neon">Cyber Neon (Indigo & Cyan 50%)</option>
+            <option value="Daylight 5600K">Daylight Clean 5600K (100% CRI)</option>
+            <option value="Golden Hour 3200K">Golden Hour Warm 3200K</option>
+            <option value="Red Alert Broadcast">Broadcast Live Red Alert</option>
+          </select>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <span class="block text-xs font-mono uppercase text-slate-300 mb-1">Master Studio "ON AIR" Sign</span>
+            <p class="text-[11px] text-slate-400">Controls exterior warning signs and corridor signals.</p>
+          </div>
+          <div class="mt-3 flex items-center justify-between">
+            <span class="text-xs font-mono font-bold text-red-400">Studio Warning Sign</span>
+            <input type="checkbox" id="adminOnAirToggle" checked class="w-6 h-6 accent-red-500 cursor-pointer">
+          </div>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
+          <div class="flex items-center justify-between">
+            <span class="block text-xs font-mono uppercase text-slate-300">Acoustic Studio Temp</span>
+            <span id="adminAcTempDisplay" class="text-lg font-black font-mono text-cyan-400">68.5°F</span>
+          </div>
+          <input type="range" id="adminAcTemp" min="62" max="78" step="0.5" value="68.5" class="w-full mt-3 accent-red-500">
+          <p class="text-[10px] text-slate-400 mt-1 font-mono">Silent Ultra-Low Velocity Air System</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Bookings Controller Table -->
+    <div class="glass-panel p-8 rounded-3xl border border-white/10 mb-12 bg-[#0d0f19]">
+      <div class="flex items-center justify-between pb-4 mb-6 border-b border-slate-800">
+        <div>
+          <h3 class="text-xl font-bold font-serif text-white">Soundstage Bookings & Event Approvals</h3>
+          <p class="text-xs text-slate-400">Approve, check-in, or manage event stage reservations.</p>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left">
+          <thead>
+            <tr class="border-b border-slate-800 text-[11px] font-mono text-slate-400 uppercase">
+              <th class="py-3 px-4">Booking ID</th>
+              <th class="py-3 px-4">Soundstage</th>
+              <th class="py-3 px-4">Creator / Event</th>
+              <th class="py-3 px-4">Schedule</th>
+              <th class="py-3 px-4">Total</th>
+              <th class="py-3 px-4">Status</th>
+              <th class="py-3 px-4 text-right">Quick Actions</th>
+            </tr>
+          </thead>
+          <tbody id="adminBookingsTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="bg-[#050609] border-t border-white/10 py-12 text-center text-xs text-slate-500">
+    <p>© 2026 My Studios. Executive Management Center. Live · Photo · Cinema</p>
+  </footer>
+
+  <script src="assets/studio-store.js"></script>
+  <script src="assets/studio-app.js"></script>
+</body>
+</html>

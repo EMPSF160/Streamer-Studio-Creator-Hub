@@ -1,0 +1,43 @@
+# Apache Server Configuration
+# Place this file in your website root directory
+
+# Enable mod_headers
+<IfModule mod_headers.c>
+    # Security Headers
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Content-Security-Policy "frame-ancestors 'self'"
+    Header always set Content-Type "text/html; charset=utf-8"
+    
+    # HTML files - no cache
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "no-cache, must-revalidate, max-age=0"
+    </FilesMatch>
+    
+    # Fingerprinted assets - long cache (8-character hash pattern)
+    <FilesMatch "^[\w-]+\.[0-9a-f]{8}\.(js|css|png|jpg|jpeg|svg|webp)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    
+    # Regular static assets - moderate cache
+    <FilesMatch "\.(js|css|png|jpg|jpeg|gif|svg|webp|ico|woff|woff2|ttf|eot)$">
+        Header set Cache-Control "public, max-age=86400"
+    </FilesMatch>
+</IfModule>
+
+# Enable mod_rewrite for clean URLs (optional)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    
+    # Force HTTPS (uncomment if using SSL)
+    # RewriteCond %{HTTPS} off
+    # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# Prevent directory browsing
+Options -Indexes
+
+# Custom error pages (optional)
+# ErrorDocument 404 /404.html
+# ErrorDocument 500 /500.html
+

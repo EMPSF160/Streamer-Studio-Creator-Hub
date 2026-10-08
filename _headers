@@ -1,0 +1,17 @@
+# Netlify Headers Configuration
+# Place this file in your website root directory or in the public folder
+
+/*
+  X-Content-Type-Options: nosniff
+  Content-Security-Policy: frame-ancestors 'self'
+  Content-Type: text/html; charset=utf-8
+
+/*.html
+  Cache-Control: no-cache, must-revalidate, max-age=0
+
+/*.htm
+  Cache-Control: no-cache, must-revalidate, max-age=0
+
+/[0-9a-f]{8}\.(js|css|png|jpg|jpeg|svg|webp)
+  Cache-Control: public, max-age=31536000, immutable
+

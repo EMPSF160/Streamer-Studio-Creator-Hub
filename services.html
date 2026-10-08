@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services & Soundstages | My Studios</title>
+  <meta name="description" content="Explore our 5 turn-key soundstages: Cyberpunk Broadcast Suite, Infinite Cyc Wall, Multi-mic Podcast Studio, Virtual MoCap Stage, and Dolby Atmos Audio Booth.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700;1,900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="https://img.icons8.com/ios-filled/50/e50914/video-trimming.png">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+            serif: ['Playfair Display', 'Cormorant Garamond', 'Georgia', 'serif'],
+            heading: ['Outfit', 'Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              red: '#e50914',
+              redHover: '#cc0812',
+              dark: '#07080c',
+              card: '#0e111a',
+              cardGlow: 'rgba(229, 9, 20, 0.25)'
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="assets/common.css">
+</head>
+<body class="bg-[#07080c] text-slate-100 min-h-screen selection:bg-red-600 selection:text-white font-sans">
+
+  <!-- Global Header -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-[#07080c]/85 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-red-600 to-red-800 p-0.5 flex items-center justify-center shadow-lg shadow-red-600/30 group-hover:scale-105 transition">
+          <div class="w-full h-full bg-[#110507] rounded-[10px] flex items-center justify-center">
+            <span class="text-red-500 font-bold text-sm">((•))</span>
+          </div>
+        </div>
+        <div>
+          <span class="font-bold text-base sm:text-lg tracking-tight text-white group-hover:text-red-400 transition block leading-none">My Studios</span>
+          <span class="text-[9px] uppercase font-mono tracking-[0.25em] text-slate-400 block mt-1">LIVE · PHOTO · CINEMA</span>
+        </div>
+      </a>
+
+      <!-- Pill Nav -->
+      <nav class="hidden md:flex items-center gap-1 bg-[#12141f]/90 border border-white/10 px-4 py-1.5 rounded-full shadow-inner text-xs font-medium text-slate-300">
+        <a href="index.html" class="px-3 py-1 rounded-full hover:text-red-400 transition">Events</a>
+        <a href="services.html" class="px-3 py-1 rounded-full text-white bg-white/10 text-red-400 transition">Services</a>
+        <a href="index.html#liveConsole" class="px-3 py-1 rounded-full hover:text-red-400 transition">Live Console</a>
+        <a href="index.html#pipeline" class="px-3 py-1 rounded-full hover:text-red-400 transition">Workflow</a>
+        <a href="portfolio.html" class="px-3 py-1 rounded-full hover:text-red-400 transition">Showcase</a>
+        <a href="about.html" class="px-3 py-1 rounded-full hover:text-red-400 transition">Facility</a>
+        <a href="contact.html" class="px-3 py-1 rounded-full hover:text-red-400 transition">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3 sm:gap-4">
+        <a href="tel:+919080208921" class="hidden lg:flex items-center gap-1.5 text-xs font-mono text-slate-300 hover:text-white transition">
+          <span class="text-slate-500">📞</span>
+          <span>+91 90802 08921</span>
+        </a>
+        <a href="index.html#bookingSection" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white font-bold text-xs shadow-lg shadow-red-600/40 transition flex items-center gap-1.5">
+          <span>Book Now</span>
+          <span class="text-sm">→</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-32 pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Hero Header with Serif typography -->
+    <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-mono font-bold mb-3">
+        STAGE INVENTORY & TECHNICAL SPECS
+      </div>
+      <h1 class="text-4xl sm:text-6xl font-serif text-white font-normal">
+        <span class="italic text-red-600 font-serif block">soundstages</span> & event services.
+      </h1>
+      <p class="text-slate-300 text-base mt-4">Acoustically isolated to NC-15, hardwired with 10Gbps symmetrical broadcast fiber, and wired with motorized DMX lighting grids.</p>
+    </div>
+
+    <!-- Stage Cards -->
+    <div class="space-y-12 mb-20">
+      
+      <!-- Stage 1 -->
+      <div class="glass-panel p-8 sm:p-10 rounded-3xl border border-white/10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#0d0f19]">
+        <div class="lg:col-span-5 relative h-72 rounded-2xl overflow-hidden bg-slate-900">
+          <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=800&q=80" alt="Stage Alpha" class="w-full h-full object-cover">
+          <div class="absolute top-3 left-3 bg-red-600 text-white text-xs font-mono font-bold px-3 py-1 rounded-full shadow-lg">
+            STAGE ALPHA // BROADCAST
+          </div>
+        </div>
+        <div class="lg:col-span-7 space-y-4">
+          <div class="flex items-center justify-between">
+            <h2 class="text-2xl font-bold font-serif text-white">Cyberpunk & Neon Live Broadcast Suite</h2>
+            <span class="text-xl font-bold font-mono text-red-400">$120 / hr</span>
+          </div>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Engineered specifically for esports tournaments, live YouTube/Twitch productions, and multi-cam talk shows. Features programmable RGB accent slating, robotic 4K PTZ camera switching, and zero-latency stream return monitors.
+          </p>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+            <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs">
+              <span class="text-slate-400 block text-[10px] font-mono uppercase">Floor Area</span>
+              <strong class="text-slate-200">1,400 sq ft</strong>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs">
+              <span class="text-slate-400 block text-[10px] font-mono uppercase">Cameras</span>
+              <strong class="text-slate-200">3x 4K PTZ Robotic</strong>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs">
+              <span class="text-slate-400 block text-[10px] font-mono uppercase">Internet Pipe</span>
+              <strong class="text-slate-200">10 Gbps Symmetrical</strong>
+            </div>
+          </div>
+          <div class="pt-4">
+            <a href="index.html#bookingSection" class="px-6 py-3 rounded-full bg-red-600 hover:bg-red-500 text-white font-bold text-xs transition shadow-lg shadow-red-600/30 inline-block">
+              Book Stage Alpha Now →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stage 2 -->
+      <div class="glass-panel p-8 sm:p-10 rounded-3xl border border-white/10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#0d0f19]">
+        <div class="lg:col-span-5 relative h-72 rounded-2xl overflow-hidden bg-slate-900">
+          <img src="https://images.unsplash.com/photo-1527011046414-4781f1f94f8c?auto=format&fit=crop&w=800&q=80" alt="Stage Beta" class="w-full h-full object-cover">
+          <div class="absolute top-3 left-3 bg-red-600 text-white text-xs font-mono font-bold px-3 py-1 rounded-full shadow-lg">
+            STAGE BETA // CYCLORAMA
+          </div>
+        </div>
+        <div class="lg:col-span-7 space-y-4">
+          <div class="flex items-center justify-between">
+            <h2 class="text-2xl font-bold font-serif text-white">Infinite White Cyclorama & Photo Lab</h2>
+            <span class="text-xl font-bold font-mono text-red-400">$140 / hr</span>
+          </div>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            A 30-foot corner infinity cyc wall with pre-rigged Aputure 1200d overhead softboxes on motorized pantographs. Perfect for commercial photography, wedding cinema lookbooks, and high-key product reveals.
+          </p>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+            <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs">
+              <span class="text-slate-400 block text-[10px] font-mono uppercase">Cyc Dimensions</span>
+              <strong class="text-slate-200">30ft × 25ft × 16ft H</strong>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs">
+              <span class="text-slate-400 block text-[10px] font-mono uppercase">Lighting Grid</span>
+              <strong class="text-slate-200">Aputure 1200d / 600d</strong>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs">
+              <span class="text-slate-400 block text-[10px] font-mono uppercase">Vehicle Access</span>
+              <strong class="text-slate-200">Drive-in Roll Up Door</strong>
+            </div>
+          </div>
+          <div class="pt-4">
+            <a href="index.html#bookingSection" class="px-6 py-3 rounded-full bg-red-600 hover:bg-red-500 text-white font-bold text-xs transition shadow-lg shadow-red-600/30 inline-block">
+              Book Stage Beta Now →
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="bg-[#050609] border-t border-white/10 py-12 text-center text-xs text-slate-500">
+    <p>© 2026 My Studios. All rights reserved. Live · Photo · Cinema</p>
+  </footer>
+
+  <script src="assets/studio-store.js"></script>
+  <script src="assets/studio-app.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creator Academy & Tech Guides | My Studios</title>
+  <meta name="description" content="Tutorials, lighting breakdowns, and streaming tech guides from the engineers and creators at My Studios.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700;1,900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="https://img.icons8.com/ios-filled/50/e50914/video-trimming.png">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+            serif: ['Playfair Display', 'Cormorant Garamond', 'Georgia', 'serif'],
+            heading: ['Outfit', 'Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              red: '#e50914',
+              redHover: '#cc0812',
+              dark: '#07080c',
+              card: '#0e111a',
+              cardGlow: 'rgba(229, 9, 20, 0.25)'
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="assets/common.css">
+</head>
+<body class="bg-[#07080c] text-slate-100 min-h-screen selection:bg-red-600 selection:text-white font-sans">
+
+  <header class="fixed top-0 inset-x-0 z-50 bg-[#07080c]/85 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-red-600 to-red-800 p-0.5 flex items-center justify-center shadow-lg shadow-red-600/30 group-hover:scale-105 transition">
+          <div class="w-full h-full bg-[#110507] rounded-[10px] flex items-center justify-center">
+            <span class="text-red-500 font-bold text-sm">((•))</span>
+          </div>
+        </div>
+        <div>
+          <span class="font-bold text-base sm:text-lg tracking-tight text-white group-hover:text-red-400 transition block leading-none">My Studios</span>
+          <span class="text-[9px] uppercase font-mono tracking-[0.25em] text-slate-400 block mt-1">LIVE · PHOTO · CINEMA</span>
+        </div>
+      </a>
+
+      <!-- Pill Nav -->
+      <nav class="hidden md:flex items-center gap-1 bg-[#12141f]/90 border border-white/10 px-4 py-1.5 rounded-full shadow-inner text-xs font-medium text-slate-300">
+        <a href="index.html" class="px-3 py-1 rounded-full hover:text-red-400 transition">Events</a>
+        <a href="services.html" class="px-3 py-1 rounded-full hover:text-red-400 transition">Services</a>
+        <a href="index.html#liveConsole" class="px-3 py-1 rounded-full hover:text-red-400 transition">Live Console</a>
+        <a href="index.html#pipeline" class="px-3 py-1 rounded-full hover:text-red-400 transition">Workflow</a>
+        <a href="portfolio.html" class="px-3 py-1 rounded-full hover:text-red-400 transition">Showcase</a>
+        <a href="about.html" class="px-3 py-1 rounded-full hover:text-red-400 transition">Facility</a>
+        <a href="journal.html" class="px-3 py-1 rounded-full text-white bg-white/10 text-red-400 transition">Academy</a>
+      </nav>
+
+      <div class="flex items-center gap-3 sm:gap-4">
+        <a href="tel:+919080208921" class="hidden lg:flex items-center gap-1.5 text-xs font-mono text-slate-300 hover:text-white transition">
+          <span class="text-slate-500">📞</span>
+          <span>+91 90802 08921</span>
+        </a>
+        <a href="index.html#bookingSection" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white font-bold text-xs shadow-lg shadow-red-600/40 transition flex items-center gap-1.5">
+          <span>Book Now</span>
+          <span class="text-sm">→</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-32 pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-mono font-bold mb-3">
+        ENGINEERING NOTES & MASTERCLASSES
+      </div>
+      <h1 class="text-4xl sm:text-6xl font-serif text-white font-normal">
+        <span class="italic text-red-600 font-serif block">broadcast</span> & cinema guides.
+      </h1>
+      <p class="text-slate-300 text-base mt-4">Learn how to dial in multi-camera switching, calibrate ACEScct color pipelines in DaVinci, and master broadcast audio.</p>
+    </div>
+
+    <!-- Articles Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <div class="glass-panel rounded-3xl overflow-hidden border border-white/10 group hover:border-red-500/60 transition flex flex-col justify-between bg-[#0d0f19]">
+        <div class="h-48 overflow-hidden bg-slate-900">
+          <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=600&q=80" alt="Broadcast Setup" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <span class="text-[10px] font-mono uppercase text-red-400">Stream Tech • 6 Min Read</span>
+            <h3 class="text-lg font-bold font-serif text-white mt-1 group-hover:text-red-400 transition">How We Stream 4K 60FPS to Global Portals Without Dropping Frames</h3>
+            <p class="text-xs text-slate-400 mt-2">A technical deep-dive into hardware NVENC AV1 encoding, SRT routing, and our 10Gbps symmetrical fiber pipeline.</p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-slate-800 text-xs text-slate-400 font-mono">
+            By Marcus Vance • Oct 2026
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-panel rounded-3xl overflow-hidden border border-white/10 group hover:border-red-500/60 transition flex flex-col justify-between bg-[#0d0f19]">
+        <div class="h-48 overflow-hidden bg-slate-900">
+          <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80" alt="Color Grading" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <span class="text-[10px] font-mono uppercase text-red-400">Cinematography • 8 Min Read</span>
+            <h3 class="text-lg font-bold font-serif text-white mt-1 group-hover:text-red-400 transition">Shooting Anamorphic on Full-Frame Sensors: Cooke vs Atlas Orion</h3>
+            <p class="text-xs text-slate-400 mt-2">Comparing horizontal flare characteristics, oval bokeh roll-off, and DaVinci Resolve de-squeeze workflows.</p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-slate-800 text-xs text-slate-400 font-mono">
+            By Elena Rostova • Oct 2026
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-panel rounded-3xl overflow-hidden border border-white/10 group hover:border-red-500/60 transition flex flex-col justify-between bg-[#0d0f19]">
+        <div class="h-48 overflow-hidden bg-slate-900">
+          <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=600&q=80" alt="Audio Engineering" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <span class="text-[10px] font-mono uppercase text-red-400">Audio Engineering • 5 Min Read</span>
+            <h3 class="text-lg font-bold font-serif text-white mt-1 group-hover:text-red-400 transition">Broadcast Audio Mastering: Shure SM7B Tuning & Gain Staging Guide</h3>
+            <p class="text-xs text-slate-400 mt-2">How to eliminate room reflections, tune real-time compressor sidechains, and prevent event audio clipping.</p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-slate-800 text-xs text-slate-400 font-mono">
+            By Alex Mercer • Sep 2026
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="bg-[#050609] border-t border-white/10 py-12 text-center text-xs text-slate-500">
+    <p>© 2026 My Studios. All rights reserved. Live · Photo · Cinema</p>
+  </footer>
+
+  <script src="assets/studio-store.js"></script>
+  <script src="assets/studio-app.js"></script>
+</body>
+</html>

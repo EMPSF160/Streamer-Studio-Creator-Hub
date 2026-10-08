@@ -1,0 +1,20 @@
+{
+  "name": "my-studios",
+  "version": "2.0.0",
+  "description": "My Studios | Live · Photo · Cinema - Streamer Studio & Creator Hub",
+  "scripts": {
+    "start": "npx serve .",
+    "build": "node build-cache-bust.js",
+    "cache-bust": "node build-cache-bust.js"
+  },
+  "keywords": [
+    "streamer-studio",
+    "creator-hub",
+    "photography",
+    "video-production",
+    "broadcast",
+    "web-app"
+  ],
+  "author": "APEX Studio",
+  "license": "MIT"
+}

@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Studios | Live · Photo · Cinema — Streamer Studio & Creator Hub</title>
+  <meta name="description" content="A live production studio for weddings, sports, streams and ideas worth broadcasting. Built in South India, delivered to the world. Turnkey soundstages, multicam 4K live streaming, and creator workflows.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700;1,900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="https://img.icons8.com/ios-filled/50/e50914/video-trimming.png">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+            serif: ['Playfair Display', 'Cormorant Garamond', 'Georgia', 'serif'],
+            heading: ['Outfit', 'Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              red: '#e50914',
+              redHover: '#cc0812',
+              dark: '#07080c',
+              card: '#0e111a',
+              cardGlow: 'rgba(229, 9, 20, 0.25)'
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="assets/common.css">
+</head>
+<body class="bg-[#07080c] text-slate-100 min-h-screen selection:bg-red-600 selection:text-white font-sans overflow-x-hidden">
+
+  <!-- =========================================================================
+       1. EXACT NAVIGATION HEADER WITH PILL CAPSULE & RED CTA
+       ========================================================================= -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-[#07080c]/85 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-red-600 to-red-800 p-0.5 flex items-center justify-center shadow-lg shadow-red-600/30 group-hover:scale-105 transition">
+          <div class="w-full h-full bg-[#110507] rounded-[10px] flex items-center justify-center">
+            <span class="text-red-500 font-bold text-sm">((•))</span>
+          </div>
+        </div>
+        <div>
+          <span class="font-bold text-base sm:text-lg tracking-tight text-white group-hover:text-red-400 transition block leading-none">My Studios</span>
+          <span class="text-[9px] uppercase font-mono tracking-[0.25em] text-slate-400 block mt-1">LIVE · PHOTO · CINEMA</span>
+        </div>
+      </a>
+
+      <!-- Center Navigation Pill Capsule -->
+      <nav class="hidden md:flex items-center gap-1 bg-[#12141f]/90 border border-white/10 px-4 py-1.5 rounded-full shadow-inner text-xs font-medium text-slate-300">
+        <a href="index.html" class="px-3 py-1 rounded-full text-white hover:text-red-400 transition">Events</a>
+        <a href="services.html" class="px-3 py-1 rounded-full hover:text-red-400 transition">Services</a>
+        <a href="#liveConsole" class="px-3 py-1 rounded-full hover:text-red-400 transition">Live Console</a>
+        <a href="#pipeline" class="px-3 py-1 rounded-full hover:text-red-400 transition">Workflow</a>
+        <a href="portfolio.html" class="px-3 py-1 rounded-full hover:text-red-400 transition">Showcase</a>
+        <a href="contact.html" class="px-3 py-1 rounded-full hover:text-red-400 transition">Contact</a>
+        <a href="admin.html" class="admin-nav-link px-3 py-1 rounded-full text-amber-400 hover:text-amber-300 transition hidden">Admin</a>
+      </nav>
+
+      <!-- Right Contact Info & Book Now Button -->
+      <div class="flex items-center gap-3 sm:gap-4">
+        <a href="tel:+919080208921" class="hidden lg:flex items-center gap-1.5 text-xs font-mono text-slate-300 hover:text-white transition">
+          <span class="text-slate-500">📞</span>
+          <span>+91 90802 08921</span>
+        </a>
+
+        <!-- Glowing Red Book Now Button -->
+        <a href="#bookingSection" class="px-4 sm:px-5 py-2.5 rounded-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white font-bold text-xs shadow-lg shadow-red-600/40 transition transform hover:-translate-y-0.5 flex items-center gap-1.5">
+          <span>Book Now</span>
+          <span class="text-sm">→</span>
+        </a>
+
+        <!-- Quick Profile & Role Switcher -->
+        <div class="relative">
+          <button id="userProfileMenuBtn" class="flex items-center gap-2 p-1 pr-2 rounded-full bg-slate-900 border border-slate-800 hover:border-red-500/50 transition">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Avatar" class="header-user-avatar w-7 h-7 rounded-full object-cover border border-red-500/50">
+            <svg class="w-3 h-3 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+
+          <!-- Dropdown -->
+          <div id="userProfileDropdown" class="hidden absolute right-0 mt-3 w-72 rounded-2xl glass-panel p-4 shadow-2xl z-50 border border-red-500/30">
+            <div class="flex items-center gap-3 pb-3 border-b border-slate-800">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Avatar" class="header-user-avatar w-10 h-10 rounded-full object-cover border border-red-500">
+              <div>
+                <h4 class="header-user-name font-bold text-xs text-white">Alex Mercer</h4>
+                <p class="header-user-role text-[11px] text-red-400">Partnered Streamer</p>
+                <span class="text-[9px] font-mono text-emerald-400">● Session Active</span>
+              </div>
+            </div>
+            <div class="mt-3 space-y-1.5">
+              <p class="text-[9px] font-mono uppercase text-slate-400 tracking-wider">Switch Persona:</p>
+              <button class="quick-role-switch w-full text-left px-2.5 py-1.5 rounded-lg hover:bg-slate-800 text-xs flex items-center justify-between text-slate-300" data-user-id="usr_alex">
+                <span>🎮 Alex (Creator/Streamer)</span>
+                <span class="text-[9px] font-mono bg-red-500/20 text-red-300 px-1.5 py-0.5 rounded">Partner</span>
+              </button>
+              <button class="quick-role-switch w-full text-left px-2.5 py-1.5 rounded-lg hover:bg-slate-800 text-xs flex items-center justify-between text-slate-300" data-user-id="usr_elena">
+                <span>📷 Elena (DP & Cinema DP)</span>
+                <span class="text-[9px] font-mono bg-purple-500/20 text-purple-300 px-1.5 py-0.5 rounded">Master DP</span>
+              </button>
+              <button class="quick-role-switch w-full text-left px-2.5 py-1.5 rounded-lg hover:bg-slate-800 text-xs flex items-center justify-between text-slate-300" data-user-id="usr_marcus">
+                <span>⚡ Marcus (Studio Admin)</span>
+                <span class="text-[9px] font-mono bg-amber-500/20 text-amber-300 px-1.5 py-0.5 rounded">Admin</span>
+              </button>
+            </div>
+            <div class="mt-3 pt-3 border-t border-slate-800">
+              <a href="admin.html" class="admin-nav-link text-xs font-semibold text-amber-400 block py-1">🛡️ Open Admin Controls</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobileMenuToggle" class="p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 md:hidden">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileMenu" class="hidden md:hidden bg-[#07080c]/95 border-b border-slate-800 px-6 py-5 backdrop-blur-xl">
+      <nav class="flex flex-col gap-3 text-sm font-semibold text-slate-300">
+        <a href="index.html" class="text-red-400 py-1">Events & Hub</a>
+        <a href="services.html" class="hover:text-white py-1">Services & Soundstages</a>
+        <a href="#liveConsole" class="hover:text-white py-1">Live Broadcast Console</a>
+        <a href="#pipeline" class="hover:text-white py-1">Shot List Kanban</a>
+        <a href="portfolio.html" class="hover:text-white py-1">Showcase</a>
+        <a href="contact.html" class="hover:text-white py-1">Contact & Inquiries</a>
+        <a href="admin.html" class="admin-nav-link text-amber-400 py-1">Admin Command Center</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. EXACT HERO SECTION: "celebrations into cinema."
+       ========================================================================= -->
+  <section class="relative pt-32 sm:pt-36 pb-20 overflow-hidden bg-[#07080c]">
+    
+    <!-- Background Vignette & Ambient Radial Glow -->
+    <div class="absolute top-1/3 left-1/4 w-[600px] h-[400px] bg-red-950/25 blur-[140px] rounded-full pointer-events-none"></div>
+    <div class="absolute top-1/2 right-1/4 w-[500px] h-[350px] bg-indigo-950/20 blur-[140px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left 7 Cols: Typography & CTAs -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <div class="animate-on-scroll">
+            <!-- Exact headline style with bold italic serif in red -->
+            <h1 class="tracking-tight">
+              <span class="block font-serif italic text-red-600 text-6xl sm:text-7xl lg:text-8xl xl:text-9xl leading-[0.95] tracking-tight font-medium">
+                celebrations
+              </span>
+              <span class="block font-serif text-white text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-none mt-1 font-semibold">
+                into cinema.
+              </span>
+            </h1>
+
+            <p class="mt-8 text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-xl">
+              A live production studio for weddings, sports and ideas worth broadcasting. Built in South India, delivered to the world.
+            </p>
+
+            <!-- Buttons -->
+            <div class="mt-8 flex flex-wrap items-center gap-4">
+              <a href="#bookingSection" class="px-7 py-3.5 rounded-full bg-gradient-to-r from-red-600 via-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white font-bold text-sm shadow-xl shadow-red-600/30 transition transform hover:-translate-y-0.5 flex items-center gap-2">
+                <span>Book your event</span>
+                <span class="text-base font-bold">→</span>
+              </a>
+
+              <button id="watchShowreelBtn" class="px-6 py-3.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/15 text-slate-200 font-medium text-sm transition flex items-center gap-2.5">
+                <span class="text-xs text-red-400">►</span>
+                <span>Watch showreel</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right 5 Cols: Exact Layered Visual Poster & Studio Badge -->
+        <div class="lg:col-span-5 relative flex justify-center items-center">
+          
+          <!-- Layer 1: Event Poster with flyer graphics -->
+          <div class="w-full max-w-md bg-[#131622] rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative group">
+            <div class="relative h-[340px] overflow-hidden bg-slate-900">
+              <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80" alt="Event Broadcast" class="w-full h-full object-cover">
+              
+              <!-- Floating Event Badge Header -->
+              <div class="absolute top-4 inset-x-4 flex justify-between items-center bg-[#07080c]/80 backdrop-blur px-3 py-1.5 rounded-lg border border-white/10 text-xs font-mono">
+                <span class="text-amber-400 font-bold">2026 ANNUAL GALA</span>
+                <span class="text-slate-300">4K LIVE FEED</span>
+              </div>
+
+              <div class="absolute bottom-4 left-4 right-4 bg-[#0a0d17]/90 backdrop-blur p-3 rounded-xl border border-white/10">
+                <p class="text-xs font-bold text-white">Sanskriti Heritage Live Broadcast</p>
+                <p class="text-[10px] text-slate-400 font-mono mt-0.5">Chinmaya Heritage Center // Multi-Cam 4K</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Layer 2: Floating Circular Red Studio Emblem -->
+          <div class="absolute -left-6 sm:-left-10 top-1/2 -translate-y-1/2 w-32 h-32 sm:w-36 sm:h-36 rounded-2xl bg-gradient-to-br from-[#800b12] to-[#3a0508] p-3 shadow-2xl border border-red-500/30 flex flex-col items-center justify-center text-center animate-bounce-slight">
+            <div class="w-16 h-16 rounded-full bg-red-600 flex flex-col items-center justify-center text-white shadow-lg shadow-red-600/50 mb-1">
+              <span class="text-xs leading-none">((•))</span>
+              <span class="text-[9px] font-black tracking-tighter mt-0.5">MY</span>
+            </div>
+            <span class="text-[8px] uppercase tracking-widest text-slate-300 font-mono font-semibold">STUDIOS</span>
+          </div>
+
+          <!-- Layer 3: Floating "From The Archive" Badge (Bottom Right) -->
+          <div class="absolute -bottom-6 right-2 sm:right-6 bg-[#0a0c14]/95 border border-red-500/30 rounded-xl p-3.5 shadow-2xl max-w-[210px] backdrop-blur-md">
+            <span class="text-[9px] font-mono text-red-400 uppercase tracking-widest block font-bold">FROM THE ARCHIVE</span>
+            <p class="text-xs font-bold text-white mt-0.5 leading-snug">Samvardhana 2026</p>
+            <p class="text-[10px] text-slate-400 font-mono mt-0.5">11-04-2026 4.15 pm ...</p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- =========================================================================
+           3. EXACT STATS COUNTER STRIP
+           ========================================================================= -->
+      <div class="mt-20 pt-12 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-8 text-left">
+        
+        <div>
+          <div class="text-3xl sm:text-4xl lg:text-5xl font-serif text-white font-normal">
+            650<span class="text-red-500 font-sans font-bold">+</span>
+          </div>
+          <p class="text-[11px] font-mono uppercase tracking-[0.2em] text-slate-400 mt-2">EVENTS COVERED</p>
+        </div>
+
+        <div>
+          <div class="text-3xl sm:text-4xl lg:text-5xl font-serif text-white font-normal">
+            1M<span class="text-red-500 font-sans font-bold">+</span>
+          </div>
+          <p class="text-[11px] font-mono uppercase tracking-[0.2em] text-slate-400 mt-2">LIVESTREAM VIEWS</p>
+        </div>
+
+        <div>
+          <div class="text-3xl sm:text-4xl lg:text-5xl font-serif text-white font-normal">
+            15<span class="text-red-500 font-sans font-bold">+</span>
+          </div>
+          <p class="text-[11px] font-mono uppercase tracking-[0.2em] text-slate-400 mt-2">INDIAN STATES</p>
+        </div>
+
+        <div>
+          <div class="text-3xl sm:text-4xl lg:text-5xl font-serif text-white font-normal">
+            8 yrs
+          </div>
+          <p class="text-[11px] font-mono uppercase tracking-[0.2em] text-slate-400 mt-2">OF EXCELLENCE</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       4. EXACT RUNNING MARQUEE TICKER RIBBON
+       ========================================================================= -->
+  <div class="border-y border-white/10 bg-[#0c0e17] py-3.5 overflow-hidden select-none">
+    <div class="animate-marquee whitespace-nowrap text-xs font-serif text-slate-300 tracking-wider">
+      <span class="mx-4 font-italic-serif text-base text-red-500 font-bold">✦</span>
+      <span class="font-serif italic text-sm">Conference Coverage</span>
+      <span class="mx-4 text-red-500 font-bold">✦</span>
+      <span class="font-serif italic text-sm">Sports Broadcasting</span>
+      <span class="mx-4 text-red-500 font-bold">✦</span>
+      <span class="font-serif italic text-sm">Live Streaming</span>
+      <span class="mx-4 text-red-500 font-bold">✦</span>
+      <span class="font-serif italic text-sm">Wedding Photography</span>
+      <span class="mx-4 text-red-500 font-bold">✦</span>
+      <span class="font-serif italic text-sm">AI Face-Matched Galleries</span>
+      <span class="mx-4 text-red-500 font-bold">✦</span>
+      <span class="font-serif italic text-sm">Event Cinema</span>
+      <span class="mx-4 text-red-500 font-bold">✦</span>
+      <span class="font-serif italic text-sm">Multi-Cam Production</span>
+      <span class="mx-4 text-red-500 font-bold">✦</span>
+      <span class="font-serif italic text-sm">4K Streamer Soundstages</span>
+      <span class="mx-4 text-red-500 font-bold">✦</span>
+      <!-- Repeated for seamless infinite scroll -->
+      <span class="font-serif italic text-sm">Conference Coverage</span>
+      <span class="mx-4 text-red-500 font-bold">✦</span>
+      <span class="font-serif italic text-sm">Sports Broadcasting</span>
+      <span class="mx-4 text-red-500 font-bold">✦</span>
+      <span class="font-serif italic text-sm">Live Streaming</span>
+      <span class="mx-4 text-red-500 font-bold">✦</span>
+      <span class="font-serif italic text-sm">Wedding Photography</span>
+      <span class="mx-4 text-red-500 font-bold">✦</span>
+      <span class="font-serif italic text-sm">AI Face-Matched Galleries</span>
+      <span class="mx-4 text-red-500 font-bold">✦</span>
+      <span class="font-serif italic text-sm">Event Cinema</span>
+      <span class="mx-4 text-red-500 font-bold">✦</span>
+      <span class="font-serif italic text-sm">Multi-Cam Production</span>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       5. INTERACTIVE LIVE PRODUCTION SWITCHER & SFX SOUNDBOARD APP
+       ========================================================================= -->
+  <section id="liveConsole" class="py-20 bg-[#090b12] border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-10">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-mono font-bold mb-2">
+            <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+            VIRTUAL BROADCAST SUITE
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-black font-heading text-white">Live Broadcast & Multi-Cam Switcher</h2>
+          <p class="text-slate-400 text-sm mt-1">Switch camera scenes, trigger Web Audio SFX, test alerts, and simulate viewer chat in real-time.</p>
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <button class="trigger-alert-btn px-3 py-1.5 rounded-xl bg-slate-900 border border-red-500/40 hover:bg-red-600/30 text-xs font-mono text-red-300 transition" data-alert-type="sub">
+            + Sub Alert
+          </button>
+          <button class="trigger-alert-btn px-3 py-1.5 rounded-xl bg-slate-900 border border-amber-500/40 hover:bg-amber-600/30 text-xs font-mono text-amber-300 transition" data-alert-type="superchat">
+            + $100 SuperChat
+          </button>
+          <button class="trigger-alert-btn px-3 py-1.5 rounded-xl bg-slate-900 border border-rose-500/40 hover:bg-rose-600/30 text-xs font-mono text-rose-300 transition" data-alert-type="raid">
+            + 10k Raid
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        
+        <!-- Left 8 Cols: Main Program Feed & Soundboard -->
+        <div class="lg:col-span-8 space-y-6">
+          <div class="glass-panel rounded-3xl p-3 border border-slate-700/70 shadow-2xl relative">
+            <div id="liveSwitcherScreen" class="w-full screen-ratio-16-9 rounded-2xl bg-cover bg-center relative overflow-hidden flex flex-col justify-between p-6 transition-all duration-500" style="background-image: linear-gradient(rgba(10, 12, 22, 0.4), rgba(10, 12, 22, 0.7)), url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=1200&q=80');">
+              
+              <div class="flex items-center justify-between z-10">
+                <div class="flex items-center gap-2">
+                  <span id="liveTallyBadge" class="px-3 py-1 rounded-md bg-red-600 text-white font-mono font-black text-xs tracking-wider shadow-lg shadow-red-600/50">
+                    LIVE // 4K 60FPS
+                  </span>
+                  <span class="px-2.5 py-1 rounded-md bg-slate-950/80 backdrop-blur font-mono text-xs text-slate-300 border border-slate-700">
+                    BITRATE: 12,500 kbps
+                  </span>
+                </div>
+                <div class="flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-950/80 backdrop-blur text-xs font-mono text-emerald-400 border border-slate-700">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                  <span>VIEWERS: 18,492</span>
+                </div>
+              </div>
+
+              <!-- Stream Alert Popup -->
+              <div id="streamAlertOverlay" class="hidden self-center bg-slate-950/95 border-2 border-amber-400 px-8 py-5 rounded-2xl shadow-2xl text-center z-20 backdrop-blur-xl">
+                <h3 id="streamAlertTitle" class="text-xl font-black font-heading text-amber-300">🎉 NEW SUBSCRIBER!</h3>
+                <p id="streamAlertSubtitle" class="text-xs font-mono text-slate-200 mt-1">CyberKnight subscribed for 6 Months!</p>
+              </div>
+
+              <div id="liveSFXBadge" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-6 py-3 rounded-2xl bg-red-600/90 text-white font-heading font-black text-lg shadow-2xl opacity-0 transition pointer-events-none z-20">
+                SFX TRIGGERED
+              </div>
+
+              <div class="flex items-end justify-between z-10">
+                <div>
+                  <span class="text-[10px] font-mono text-red-400 uppercase tracking-widest block">Active Camera Feed</span>
+                  <h4 id="liveSwitcherLabel" class="text-lg font-bold text-white font-heading tracking-wide">
+                    CAM 1: HOST STUDIO (4K MAIN)
+                  </h4>
+                </div>
+                <div class="flex items-end gap-1 h-6 px-2 py-1 bg-slate-950/80 rounded-lg border border-slate-700">
+                  <span class="equalizer-bar w-1 bg-emerald-400 rounded-sm"></span>
+                  <span class="equalizer-bar w-1 bg-emerald-400 rounded-sm"></span>
+                  <span class="equalizer-bar w-1 bg-red-500 rounded-sm"></span>
+                  <span class="equalizer-bar w-1 bg-red-500 rounded-sm"></span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Scene Selector Strip -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <button class="switcher-scene-btn p-3 rounded-2xl bg-red-600 text-white border border-red-400 text-left transition" data-scene="cam1">
+              <span class="text-[10px] font-mono uppercase block text-red-200">Scene 1</span>
+              <p class="text-xs font-bold mt-0.5">Cam 1: Host 4K</p>
+            </button>
+            <button class="switcher-scene-btn p-3 rounded-2xl bg-slate-800 text-slate-300 border border-slate-700 hover:border-red-400 text-left transition" data-scene="cam2">
+              <span class="text-[10px] font-mono uppercase block text-slate-400">Scene 2</span>
+              <p class="text-xs font-bold mt-0.5">Cam 2: Dual PiP</p>
+            </button>
+            <button class="switcher-scene-btn p-3 rounded-2xl bg-slate-800 text-slate-300 border border-slate-700 hover:border-red-400 text-left transition" data-scene="cam3">
+              <span class="text-[10px] font-mono uppercase block text-slate-400">Scene 3</span>
+              <p class="text-xs font-bold mt-0.5">Cam 3: Top Rig</p>
+            </button>
+            <button class="switcher-scene-btn p-3 rounded-2xl bg-slate-800 text-slate-300 border border-slate-700 hover:border-red-400 text-left transition" data-scene="brb">
+              <span class="text-[10px] font-mono uppercase block text-slate-400">Scene 4</span>
+              <p class="text-xs font-bold mt-0.5">BRB Screen</p>
+            </button>
+          </div>
+
+          <!-- SFX Soundboard Hardware Deck -->
+          <div class="glass-panel p-5 rounded-3xl border border-slate-800">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2">
+                <span class="text-red-500 text-sm">🎛️</span>
+                <h3 class="font-heading font-bold text-sm text-slate-200 uppercase tracking-wider">Web Audio SFX Soundboard</h3>
+              </div>
+              <span class="text-[10px] font-mono text-slate-400">Web Audio API Engine</span>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
+              <button id="sfxAirhorn" class="p-3.5 rounded-2xl bg-gradient-to-b from-red-600/30 to-red-900/40 border border-red-500/40 hover:border-red-400 text-red-200 font-bold text-xs flex flex-col items-center gap-1.5 transition active:scale-95 shadow-lg">
+                <span class="text-lg">📢</span>
+                <span>AIRHORN</span>
+              </button>
+              <button id="sfxCheer" class="p-3.5 rounded-2xl bg-gradient-to-b from-amber-600/30 to-amber-900/40 border border-amber-500/40 hover:border-amber-400 text-amber-200 font-bold text-xs flex flex-col items-center gap-1.5 transition active:scale-95 shadow-lg">
+                <span class="text-lg">👏</span>
+                <span>CHEER</span>
+              </button>
+              <button id="sfxLevelUp" class="p-3.5 rounded-2xl bg-gradient-to-b from-indigo-600/30 to-indigo-900/40 border border-indigo-500/40 hover:border-indigo-400 text-indigo-200 font-bold text-xs flex flex-col items-center gap-1.5 transition active:scale-95 shadow-lg">
+                <span class="text-lg">🎮</span>
+                <span>LEVEL UP</span>
+              </button>
+              <button id="sfxBuzzer" class="p-3.5 rounded-2xl bg-gradient-to-b from-purple-600/30 to-purple-900/40 border border-purple-500/40 hover:border-purple-400 text-purple-200 font-bold text-xs flex flex-col items-center gap-1.5 transition active:scale-95 shadow-lg">
+                <span class="text-lg">🚨</span>
+                <span>BUZZER</span>
+              </button>
+              <button id="sfxSwoop" class="p-3.5 rounded-2xl bg-gradient-to-b from-cyan-600/30 to-cyan-900/40 border border-cyan-500/40 hover:border-cyan-400 text-cyan-200 font-bold text-xs flex flex-col items-center gap-1.5 transition active:scale-95 shadow-lg">
+                <span class="text-lg">✨</span>
+                <span>SWOOP</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right 4 Cols: Live Chat Simulator -->
+        <div class="lg:col-span-4 space-y-6">
+          <div class="glass-panel p-5 rounded-3xl border border-slate-800 flex flex-col h-[520px] justify-between">
+            <div>
+              <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                  <h3 class="font-heading font-bold text-sm text-slate-100">Live Broadcast Chat</h3>
+                </div>
+                <span class="text-[10px] font-mono text-slate-400">Slow Mode: 3s</span>
+              </div>
+
+              <div id="liveChatMessages" class="mt-3 space-y-2 overflow-y-auto max-h-[360px] pr-1 scrollbar-thin">
+                <div class="flex items-start gap-2 text-xs py-1 border-b border-slate-800/40">
+                  <span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-red-500/20 text-red-300 border border-red-500/30">HOST</span>
+                  <span class="font-semibold text-red-400">Onlive_Bot:</span>
+                  <span class="text-slate-300">Live stream feed calibrated at 4K 60fps.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-3 border-t border-slate-800 flex gap-2">
+              <input id="liveChatInput" type="text" placeholder="Send chat message..." class="flex-1 bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-red-500">
+              <button id="liveChatSendBtn" class="px-3.5 py-2 bg-red-600 hover:bg-red-500 rounded-xl text-white text-xs font-bold transition">
+                Send
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       6. SOUNDSTAGE & EVENT BOOKING CALCULATOR SECTION
+       ========================================================================= -->
+  <section id="bookingSection" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-mono font-bold mb-3">
+        EVENT & STUDIO RESERVATIONS
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-black font-heading text-white">Book Your Production & Event</h2>
+      <p class="text-slate-400 text-base mt-3">Configure soundstage hours, multi-cam live broadcast rigs, and resident engineering crew.</p>
+    </div>
+
+    <!-- Booking Calculator Box -->
+    <div class="glass-panel p-8 sm:p-10 rounded-3xl border border-red-500/30 shadow-2xl max-w-4xl mx-auto">
+      <form id="stageBookingForm" class="space-y-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          
+          <div>
+            <label class="block text-xs font-mono uppercase text-slate-300 mb-2">Select Production Stage / Event Suite</label>
+            <select id="bookingStageSelect" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 focus:border-red-500 focus:outline-none">
+              <option value="stage_alpha">Stage Alpha: Cyberpunk Live Broadcast Suite ($120/hr)</option>
+              <option value="stage_beta">Stage Beta: Infinite White Cyc Wall ($140/hr)</option>
+              <option value="stage_gamma">Stage Gamma: Podcast Lounge ($95/hr)</option>
+              <option value="stage_delta">Stage Delta: Virtual MoCap Room ($180/hr)</option>
+              <option value="booth_epsilon">Booth Epsilon: Dolby Atmos Audio ($85/hr)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-mono uppercase text-slate-300 mb-2">Duration (Hours)</label>
+            <input id="bookingHours" type="number" min="1" max="24" value="4" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 focus:border-red-500 focus:outline-none">
+          </div>
+
+          <div>
+            <label class="block text-xs font-mono uppercase text-slate-300 mb-2">Event Date</label>
+            <input id="bookingDate" type="date" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 focus:border-red-500 focus:outline-none">
+          </div>
+
+          <div>
+            <label class="block text-xs font-mono uppercase text-slate-300 mb-2">Call Time</label>
+            <select id="bookingTime" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 focus:border-red-500 focus:outline-none">
+              <option value="09:00">09:00 AM (Morning Call)</option>
+              <option value="13:00">01:00 PM (Afternoon Prime)</option>
+              <option value="17:00" selected>05:00 PM (Evening Broadcast)</option>
+              <option value="21:00">09:00 PM (Night Production)</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="pt-4 border-t border-slate-800">
+          <label class="block text-xs font-mono uppercase text-slate-300 mb-3">Optional Production Add-ons</label>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+            <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 cursor-pointer">
+              <input type="checkbox" class="booking-addon-checkbox accent-red-500" data-price="80" data-name="RED V-Raptor 8K Package">
+              <span class="text-slate-200">RED V-Raptor 8K Camera Rig (+$80)</span>
+            </label>
+            <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 cursor-pointer">
+              <input type="checkbox" class="booking-addon-checkbox accent-red-500" data-price="50" data-name="Teleprompter 24 Inch">
+              <span class="text-slate-200">24" Teleprompter Rig (+$50)</span>
+            </label>
+            <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 cursor-pointer">
+              <input type="checkbox" class="booking-addon-checkbox accent-red-500" data-price="120" data-name="Resident Audio Engineer">
+              <span class="text-slate-200">Resident Sound & Broadcast Engineer (+$120)</span>
+            </label>
+            <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 cursor-pointer">
+              <input type="checkbox" class="booking-addon-checkbox accent-red-500" data-price="150" data-name="Live 4K Colorist">
+              <span class="text-slate-200">Live 4K Stream Colorist (+$150)</span>
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-mono uppercase text-slate-300 mb-2">Event Title / Purpose</label>
+          <input id="bookingPurpose" type="text" placeholder="e.g. Wedding Cinema Broadcast / Esports Tournament" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 focus:border-red-500 focus:outline-none">
+        </div>
+
+        <div class="pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            <span class="text-xs text-slate-400 font-mono">ESTIMATED TOTAL:</span>
+            <div id="bookingTotalPrice" class="text-3xl font-black font-heading text-red-500">$480</div>
+          </div>
+          <button type="submit" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white font-bold text-sm tracking-wide shadow-xl shadow-red-600/30 transition">
+            Confirm & Reserve Stage →
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       7. PRODUCTION SHOT LIST KANBAN
+       ========================================================================= -->
+  <section id="pipeline" class="py-20 bg-[#090b12] border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-10">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-mono font-bold mb-2">
+            PRODUCTION PIPELINE
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-black font-heading text-white">Event Shot List & Kanban</h2>
+          <p class="text-slate-400 text-sm mt-1">Manage pre-event prep, live soundstage calls, multi-cam editing, and 4K masters.</p>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button id="addKanbanTaskBtn" class="px-4 py-2.5 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs flex items-center gap-2 transition shadow-lg shadow-red-600/20">
+            <span>+</span> Add Shot / Task
+          </button>
+          <button id="exportCallSheetBtn" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs flex items-center gap-2 transition border border-slate-700">
+            <span>📄</span> Export Call Sheet
+          </button>
+        </div>
+      </div>
+
+      <div id="kanbanBoard" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div id="col_pre_prod" class="kanban-col-drop glass-panel rounded-2xl p-4 border border-slate-800 transition min-h-[440px]" data-stage-key="pre_prod">
+          <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-800">
+            <h3 class="font-heading font-bold text-xs uppercase text-slate-300">1. Pre-Event</h3>
+            <span class="kanban-count-badge text-[10px] font-mono px-2 py-0.5 rounded-full bg-slate-800 text-slate-400">0</span>
+          </div>
+          <div class="kanban-task-list min-h-[340px]"></div>
+        </div>
+
+        <div id="col_scheduled" class="kanban-col-drop glass-panel rounded-2xl p-4 border border-slate-800 transition min-h-[440px]" data-stage-key="scheduled">
+          <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-800">
+            <h3 class="font-heading font-bold text-xs uppercase text-amber-400">2. Live Shoot</h3>
+            <span class="kanban-count-badge text-[10px] font-mono px-2 py-0.5 rounded-full bg-slate-800 text-amber-400">0</span>
+          </div>
+          <div class="kanban-task-list min-h-[340px]"></div>
+        </div>
+
+        <div id="col_post_prod" class="kanban-col-drop glass-panel rounded-2xl p-4 border border-slate-800 transition min-h-[440px]" data-stage-key="post_prod">
+          <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-800">
+            <h3 class="font-heading font-bold text-xs uppercase text-red-400">3. Post-Edit</h3>
+            <span class="kanban-count-badge text-[10px] font-mono px-2 py-0.5 rounded-full bg-slate-800 text-red-400">0</span>
+          </div>
+          <div class="kanban-task-list min-h-[340px]"></div>
+        </div>
+
+        <div id="col_color_grade" class="kanban-col-drop glass-panel rounded-2xl p-4 border border-slate-800 transition min-h-[440px]" data-stage-key="color_grade">
+          <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-800">
+            <h3 class="font-heading font-bold text-xs uppercase text-purple-400">4. Cinema Color</h3>
+            <span class="kanban-count-badge text-[10px] font-mono px-2 py-0.5 rounded-full bg-slate-800 text-purple-400">0</span>
+          </div>
+          <div class="kanban-task-list min-h-[340px]"></div>
+        </div>
+
+        <div id="col_published" class="kanban-col-drop glass-panel rounded-2xl p-4 border border-slate-800 transition min-h-[440px]" data-stage-key="published">
+          <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-800">
+            <h3 class="font-heading font-bold text-xs uppercase text-emerald-400">5. Delivered</h3>
+            <span class="kanban-count-badge text-[10px] font-mono px-2 py-0.5 rounded-full bg-slate-800 text-emerald-400">0</span>
+          </div>
+          <div class="kanban-task-list min-h-[340px]"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="bg-[#050609] border-t border-white/10 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+        
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-red-500 font-bold text-lg">((•))</span>
+            <span class="font-bold text-base text-white">My Studios</span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Live production studio for weddings, sports, and ideas worth broadcasting. Built in South India, delivered to the world.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-mono uppercase text-slate-200 font-bold tracking-wider mb-3">Services</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="services.html" class="hover:text-white">Multi-Cam Live Streaming</a></li>
+            <li><a href="services.html" class="hover:text-white">Wedding Event Cinema</a></li>
+            <li><a href="services.html" class="hover:text-white">Sports Broadcasting</a></li>
+            <li><a href="services.html" class="hover:text-white">AI Face-Matched Galleries</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-mono uppercase text-slate-200 font-bold tracking-wider mb-3">Creator Suite</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="#liveConsole" class="hover:text-white">Live Broadcast Switcher</a></li>
+            <li><a href="#pipeline" class="hover:text-white">Shot List Kanban</a></li>
+            <li><a href="portfolio.html" class="hover:text-white">Event Archive & Showcase</a></li>
+            <li><a href="admin.html" class="admin-nav-link text-amber-400">Admin Control Center</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-mono uppercase text-slate-200 font-bold tracking-wider mb-3">Direct Desk</h4>
+          <p class="text-xs text-slate-400 leading-relaxed font-mono">
+            Phone: +91 90802 08921<br>
+            Email: live@mystudios.com<br>
+            Chennai & Bangalore Hubs
+          </p>
+        </div>
+
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
+        <p>© 2026 My Studios. All rights reserved.</p>
+        <p class="font-mono">Live · Photo · Cinema</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Showreel Modal -->
+  <div id="showreelModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md">
+    <div class="glass-panel w-full max-w-3xl p-6 rounded-3xl border border-red-500/40 relative">
+      <button id="closeShowreelBtn" class="absolute top-4 right-4 text-slate-400 hover:text-white text-lg">✕</button>
+      <h3 class="text-xl font-bold font-serif text-white mb-4">My Studios // 2026 Showreel Master</h3>
+      <div class="w-full screen-ratio-16-9 rounded-2xl bg-black relative overflow-hidden flex items-center justify-center border border-slate-800">
+        <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=1200&q=80" alt="Showreel" class="w-full h-full object-cover opacity-60">
+        <div class="absolute text-center">
+          <div class="w-16 h-16 rounded-full bg-red-600/90 text-white flex items-center justify-center text-2xl mx-auto shadow-2xl animate-pulse cursor-pointer">
+            ►
+          </div>
+          <p class="text-xs font-mono text-slate-300 mt-3">4K Cinema Reel Playing (Demo Stream)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Kanban Modal -->
+  <div id="kanbanTaskModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+    <div class="glass-panel w-full max-w-lg p-8 rounded-3xl border border-red-500/40 relative shadow-2xl">
+      <button class="close-kanban-modal-btn absolute top-5 right-5 text-slate-400 hover:text-white text-lg">✕</button>
+      <h3 class="text-2xl font-black font-heading text-white mb-2">New Event Shot / Task</h3>
+      <form id="kanbanTaskForm" class="space-y-4">
+        <div>
+          <label class="block text-xs font-mono uppercase text-slate-300 mb-1">Task / Shot Title</label>
+          <input id="taskTitle" type="text" placeholder="e.g. Multicam Drone Coverage" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-slate-100 focus:border-red-500 focus:outline-none">
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-mono uppercase text-slate-300 mb-1">Pipeline Stage</label>
+            <select id="taskStage" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-100 focus:border-red-500 focus:outline-none">
+              <option value="pre_prod">Pre-Event</option>
+              <option value="scheduled">Live Shoot</option>
+              <option value="post_prod">Post-Edit</option>
+              <option value="color_grade">Cinema Color</option>
+              <option value="published">Delivered</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-mono uppercase text-slate-300 mb-1">Priority</label>
+            <select id="taskPriority" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-100 focus:border-red-500 focus:outline-none">
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+              <option value="Urgent">Urgent</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs font-mono uppercase text-slate-300 mb-1">Assignee</label>
+          <input id="taskAssignee" type="text" placeholder="Alex Mercer" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2 text-sm text-slate-100 focus:border-red-500 focus:outline-none">
+        </div>
+        <div>
+          <label class="block text-xs font-mono uppercase text-slate-300 mb-1">Tags</label>
+          <input id="taskTags" type="text" placeholder="4K, Drone, Multi-Cam" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2 text-sm text-slate-100 focus:border-red-500 focus:outline-none">
+        </div>
+        <button type="submit" class="w-full py-3 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-sm shadow-lg transition mt-4">
+          Add to Pipeline
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="assets/studio-store.js"></script>
+  <script src="assets/studio-app.js"></script>
+  <script>
+    // Showreel modal handlers
+    const showreelBtn = document.getElementById('watchShowreelBtn');
+    const showreelModal = document.getElementById('showreelModal');
+    const closeShowreelBtn = document.getElementById('closeShowreelBtn');
+
+    showreelBtn?.addEventListener('click', () => {
+      showreelModal?.classList.remove('hidden');
+    });
+    closeShowreelBtn?.addEventListener('click', () => {
+      showreelModal?.classList.add('hidden');
+    });
+  </script>
+</body>
+</html>
