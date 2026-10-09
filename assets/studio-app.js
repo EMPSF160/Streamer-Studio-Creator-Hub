@@ -65,6 +65,30 @@ function initGlobalHeader() {
     });
   }
 
+  // Mobile Menu Toggle
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  if (mobileMenuToggle && mobileMenu) {
+    mobileMenuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close when clicking links inside mobileMenu
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+  }
+
   // Quick Switch Roles
   quickRoleBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -490,7 +514,7 @@ function initKanbanWorkflow() {
       if (!list) return;
 
       const card = document.createElement('div');
-      card.className = 'glass-panel p-4 rounded-xl border border-slate-700/60 hover:border-indigo-500/80 transition shadow-lg group cursor-grab mb-3';
+      card.className = 'bg-[#121524] hover:bg-[#181c2f] p-3 rounded-xl border border-slate-700/60 hover:border-red-500/60 transition-all shadow-md group cursor-grab mb-2.5';
       card.setAttribute('draggable', 'true');
       card.setAttribute('data-task-id', task.id);
 
@@ -505,25 +529,25 @@ function initKanbanWorkflow() {
 
       card.innerHTML = `
         <div class="flex items-center justify-between gap-2 mb-2">
-          <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border ${pClass}">
+          <span class="text-[9px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border ${pClass}">
             ${task.priority}
           </span>
-          <span class="text-xs text-slate-400 font-mono">${task.dueDate}</span>
+          <span class="text-[11px] text-slate-400 font-mono">${task.dueDate}</span>
         </div>
-        <h4 class="text-sm font-semibold text-slate-100 group-hover:text-indigo-300 transition line-clamp-2 mb-2">
+        <h4 class="text-xs font-semibold text-slate-100 group-hover:text-red-300 transition line-clamp-2 mb-2 leading-snug">
           ${task.title}
         </h4>
-        <div class="flex flex-wrap gap-1.5 mb-3">
-          ${(task.tags || []).map(tag => `<span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">${tag}</span>`).join('')}
+        <div class="flex flex-wrap gap-1 mb-2.5">
+          ${(task.tags || []).map(tag => `<span class="text-[9px] font-mono bg-slate-900/90 text-slate-300 border border-white/5 px-1.5 py-0.5 rounded">${tag}</span>`).join('')}
         </div>
-        <div class="flex items-center justify-between pt-2 border-t border-slate-800 text-xs text-slate-400">
-          <span class="flex items-center gap-1.5">
-            <span class="w-2 h-2 rounded-full bg-indigo-500"></span>
-            ${task.assignee}
+        <div class="flex items-center justify-between pt-2 border-t border-slate-800/80 text-[11px] text-slate-400">
+          <span class="flex items-center gap-1.5 truncate max-w-[100px]">
+            <span class="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0"></span>
+            <span class="truncate">${task.assignee}</span>
           </span>
-          <div class="flex items-center gap-1 opacity-80 group-hover:opacity-100">
-            <button class="move-task-btn p-1 hover:text-indigo-400" title="Move Next" data-task-id="${task.id}" data-current="${task.stage}">➜</button>
-            <button class="delete-task-btn p-1 hover:text-rose-400" title="Delete Task" data-task-id="${task.id}">✕</button>
+          <div class="flex items-center gap-1 shrink-0">
+            <button class="move-task-btn p-1 hover:text-red-400 transition" title="Advance Stage" data-task-id="${task.id}" data-current="${task.stage}">➜</button>
+            <button class="delete-task-btn p-1 hover:text-rose-400 transition" title="Delete Task" data-task-id="${task.id}">✕</button>
           </div>
         </div>
       `;

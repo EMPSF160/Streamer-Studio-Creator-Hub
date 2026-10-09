@@ -41,40 +41,139 @@
 </head>
 <body class="bg-[#07080c] text-slate-100 min-h-screen selection:bg-red-600 selection:text-white font-sans">
 
-  <header class="fixed top-0 inset-x-0 z-50 bg-[#07080c]/85 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-red-600 to-red-800 p-0.5 flex items-center justify-center shadow-lg shadow-red-600/30 group-hover:scale-105 transition">
+  <!-- Header -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-[#07080c]/90 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-2 sm:gap-4">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-2 sm:gap-3 group shrink-0">
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-red-600 to-red-800 p-0.5 flex items-center justify-center shadow-lg shadow-red-600/30 group-hover:scale-105 transition shrink-0">
           <div class="w-full h-full bg-[#110507] rounded-[10px] flex items-center justify-center">
-            <span class="text-red-500 font-bold text-sm">((•))</span>
+            <span class="text-red-500 font-bold text-xs sm:text-sm">((•))</span>
           </div>
         </div>
         <div>
-          <span class="font-bold text-base sm:text-lg tracking-tight text-white group-hover:text-red-400 transition block leading-none">My Studios</span>
-          <span class="text-[9px] uppercase font-mono tracking-[0.25em] text-slate-400 block mt-1">LIVE · PHOTO · CINEMA</span>
+          <span class="font-bold text-sm sm:text-base lg:text-lg tracking-tight text-white group-hover:text-red-400 transition block leading-none">My Studios</span>
+          <span class="text-[8px] sm:text-[9px] uppercase font-mono tracking-[0.18em] sm:tracking-[0.25em] text-slate-400 block mt-0.5 sm:mt-1">LIVE · PHOTO · CINEMA</span>
         </div>
       </a>
 
-      <!-- Pill Nav -->
-      <nav class="hidden md:flex items-center gap-1 bg-[#12141f]/90 border border-white/10 px-4 py-1.5 rounded-full shadow-inner text-xs font-medium text-slate-300">
-        <a href="index.html" class="px-3 py-1 rounded-full hover:text-red-400 transition">Events</a>
-        <a href="services.html" class="px-3 py-1 rounded-full hover:text-red-400 transition">Services</a>
-        <a href="index.html#liveConsole" class="px-3 py-1 rounded-full hover:text-red-400 transition">Live Console</a>
-        <a href="index.html#pipeline" class="px-3 py-1 rounded-full hover:text-red-400 transition">Workflow</a>
-        <a href="portfolio.html" class="px-3 py-1 rounded-full hover:text-red-400 transition">Showcase</a>
-        <a href="testimonials.html" class="px-3 py-1 rounded-full text-white bg-white/10 text-red-400 transition">Reviews</a>
+      <!-- Pill Nav (Visible on lg: 1024px+) -->
+      <nav class="hidden lg:flex items-center gap-1 bg-[#12141f]/90 border border-white/10 px-3 xl:px-4 py-1.5 rounded-full shadow-inner text-xs font-medium text-slate-300">
+        <a href="index.html" class="px-2.5 xl:px-3 py-1 rounded-full hover:text-red-400 transition">Events</a>
+        <a href="services.html" class="px-2.5 xl:px-3 py-1 rounded-full hover:text-red-400 transition">Services</a>
+        <a href="index.html#liveConsole" class="px-2.5 xl:px-3 py-1 rounded-full hover:text-red-400 transition">Live Console</a>
+        <a href="index.html#pipeline" class="px-2.5 xl:px-3 py-1 rounded-full hover:text-red-400 transition">Workflow</a>
+        <a href="portfolio.html" class="px-2.5 xl:px-3 py-1 rounded-full hover:text-red-400 transition">Showcase</a>
+        <a href="about.html" class="px-2.5 xl:px-3 py-1 rounded-full hover:text-red-400 transition">Facility</a>
+        <a href="testimonials.html" class="px-2.5 xl:px-3 py-1 rounded-full text-white bg-white/10 text-red-400 transition">Reviews</a>
+        <a href="contact.html" class="px-2.5 xl:px-3 py-1 rounded-full hover:text-red-400 transition">Contact</a>
+        <a href="admin.html" class="admin-nav-link px-2.5 xl:px-3 py-1 rounded-full text-amber-400 hover:text-amber-300 transition hidden">Admin</a>
       </nav>
 
-      <div class="flex items-center gap-3 sm:gap-4">
-        <a href="tel:+919080208921" class="hidden lg:flex items-center gap-1.5 text-xs font-mono text-slate-300 hover:text-white transition">
+      <!-- Right Action Group -->
+      <div class="flex items-center gap-1.5 sm:gap-3 shrink-0">
+        <a href="tel:+919080208921" class="hidden xl:flex items-center gap-1.5 text-xs font-mono text-slate-300 hover:text-white transition">
           <span class="text-slate-500">📞</span>
           <span>+91 90802 08921</span>
         </a>
-        <a href="index.html#bookingSection" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white font-bold text-xs shadow-lg shadow-red-600/40 transition flex items-center gap-1.5">
+
+        <!-- Glowing Red Book Now Button -->
+        <a href="index.html#bookingSection" class="px-3 sm:px-5 py-2 sm:py-2.5 rounded-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white font-bold text-[11px] sm:text-xs shadow-lg shadow-red-600/40 transition transform hover:-translate-y-0.5 flex items-center gap-1 sm:gap-1.5 shrink-0">
           <span>Book Now</span>
-          <span class="text-sm">→</span>
+          <span class="text-xs sm:text-sm">→</span>
         </a>
+
+        <!-- Quick Profile & Role Switcher -->
+        <div class="relative shrink-0">
+          <button id="userProfileMenuBtn" aria-label="User Profile" class="flex items-center gap-1 sm:gap-2 p-1 pr-1.5 sm:pr-2 rounded-full bg-slate-900 border border-slate-800 hover:border-red-500/50 transition">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Avatar" class="header-user-avatar w-6 h-6 sm:w-7 sm:h-7 rounded-full object-cover border border-red-500/50">
+            <svg class="w-3 h-3 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+
+          <!-- Dropdown -->
+          <div id="userProfileDropdown" class="hidden absolute right-0 mt-3 w-72 rounded-2xl glass-panel p-4 shadow-2xl z-50 border border-red-500/30">
+            <div class="flex items-center gap-3 pb-3 border-b border-slate-800">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Avatar" class="header-user-avatar w-10 h-10 rounded-full object-cover border border-red-500">
+              <div>
+                <h4 class="header-user-name font-bold text-xs text-white">Alex Mercer</h4>
+                <p class="header-user-role text-[11px] text-red-400">Partnered Streamer</p>
+                <span class="text-[9px] font-mono text-emerald-400">● Session Active</span>
+              </div>
+            </div>
+            <div class="mt-3 space-y-1.5">
+              <p class="text-[9px] font-mono uppercase text-slate-400 tracking-wider">Switch Persona:</p>
+              <button class="quick-role-switch w-full text-left px-2.5 py-1.5 rounded-lg hover:bg-slate-800 text-xs flex items-center justify-between text-slate-300" data-user-id="usr_alex">
+                <span>🎮 Alex (Creator/Streamer)</span>
+                <span class="text-[9px] font-mono bg-red-500/20 text-red-300 px-1.5 py-0.5 rounded">Partner</span>
+              </button>
+              <button class="quick-role-switch w-full text-left px-2.5 py-1.5 rounded-lg hover:bg-slate-800 text-xs flex items-center justify-between text-slate-300" data-user-id="usr_elena">
+                <span>📷 Elena (DP & Cinema DP)</span>
+                <span class="text-[9px] font-mono bg-purple-500/20 text-purple-300 px-1.5 py-0.5 rounded">Master DP</span>
+              </button>
+              <button class="quick-role-switch w-full text-left px-2.5 py-1.5 rounded-lg hover:bg-slate-800 text-xs flex items-center justify-between text-slate-300" data-user-id="usr_marcus">
+                <span>⚡ Marcus (Studio Admin)</span>
+                <span class="text-[9px] font-mono bg-amber-500/20 text-amber-300 px-1.5 py-0.5 rounded">Admin</span>
+              </button>
+            </div>
+            <div class="mt-3 pt-3 border-t border-slate-800">
+              <a href="admin.html" class="admin-nav-link text-xs font-semibold text-amber-400 block py-1">🛡️ Open Admin Controls</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile & Tablet Menu Toggle (Visible below lg: 1024px) -->
+        <button id="mobileMenuToggle" aria-label="Toggle navigation menu" class="p-1.5 sm:p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700 transition lg:hidden shrink-0">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
       </div>
+    </div>
+
+    <!-- Mobile & Tablet Drawer Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-[#07080c]/98 border-b border-slate-800 px-6 py-5 backdrop-blur-2xl shadow-2xl transition-all">
+      <nav class="flex flex-col gap-2.5 text-sm font-semibold text-slate-300">
+        <a href="index.html" class="hover:text-red-400 py-1.5 px-3 rounded-lg hover:bg-white/5 transition flex items-center justify-between">
+          <span>Events & Hub</span>
+          <span class="text-xs text-slate-500 font-mono">01</span>
+        </a>
+        <a href="services.html" class="hover:text-red-400 py-1.5 px-3 rounded-lg hover:bg-white/5 transition flex items-center justify-between">
+          <span>Services & Soundstages</span>
+          <span class="text-xs text-slate-500 font-mono">02</span>
+        </a>
+        <a href="index.html#liveConsole" class="hover:text-red-400 py-1.5 px-3 rounded-lg hover:bg-white/5 transition flex items-center justify-between">
+          <span>Live Console</span>
+          <span class="text-xs text-slate-500 font-mono">03</span>
+        </a>
+        <a href="index.html#pipeline" class="hover:text-red-400 py-1.5 px-3 rounded-lg hover:bg-white/5 transition flex items-center justify-between">
+          <span>Production Pipeline</span>
+          <span class="text-xs text-slate-500 font-mono">04</span>
+        </a>
+        <a href="portfolio.html" class="hover:text-red-400 py-1.5 px-3 rounded-lg hover:bg-white/5 transition flex items-center justify-between">
+          <span>Showcase & Archive</span>
+          <span class="text-xs text-slate-500 font-mono">05</span>
+        </a>
+        <a href="about.html" class="hover:text-red-400 py-1.5 px-3 rounded-lg hover:bg-white/5 transition flex items-center justify-between">
+          <span>Facility & Infrastructure</span>
+          <span class="text-xs text-slate-500 font-mono">06</span>
+        </a>
+        <a href="testimonials.html" class="text-red-400 py-1.5 px-3 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-between">
+          <span>Client Reviews</span>
+          <span class="text-xs text-red-400 font-mono">07</span>
+        </a>
+        <a href="contact.html" class="hover:text-red-400 py-1.5 px-3 rounded-lg hover:bg-white/5 transition flex items-center justify-between">
+          <span>Contact & Tour</span>
+          <span class="text-xs text-slate-500 font-mono">08</span>
+        </a>
+        <a href="admin.html" class="admin-nav-link text-amber-400 py-1.5 px-3 rounded-lg hover:bg-amber-500/10 transition hidden flex items-center justify-between">
+          <span>🛡️ Admin Dashboard</span>
+          <span class="text-xs text-amber-500 font-mono">09</span>
+        </a>
+      </nav>
     </div>
   </header>
 

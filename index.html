@@ -44,50 +44,51 @@
   <!-- =========================================================================
        1. EXACT NAVIGATION HEADER WITH PILL CAPSULE & RED CTA
        ========================================================================= -->
-  <header class="fixed top-0 inset-x-0 z-50 bg-[#07080c]/85 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+  <header class="fixed top-0 inset-x-0 z-50 bg-[#07080c]/90 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-2 sm:gap-4">
       
       <!-- Brand Logo -->
-      <a href="index.html" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-red-600 to-red-800 p-0.5 flex items-center justify-center shadow-lg shadow-red-600/30 group-hover:scale-105 transition">
+      <a href="index.html" class="flex items-center gap-2 sm:gap-3 group shrink-0">
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-red-600 to-red-800 p-0.5 flex items-center justify-center shadow-lg shadow-red-600/30 group-hover:scale-105 transition shrink-0">
           <div class="w-full h-full bg-[#110507] rounded-[10px] flex items-center justify-center">
-            <span class="text-red-500 font-bold text-sm">((•))</span>
+            <span class="text-red-500 font-bold text-xs sm:text-sm">((•))</span>
           </div>
         </div>
         <div>
-          <span class="font-bold text-base sm:text-lg tracking-tight text-white group-hover:text-red-400 transition block leading-none">My Studios</span>
-          <span class="text-[9px] uppercase font-mono tracking-[0.25em] text-slate-400 block mt-1">LIVE · PHOTO · CINEMA</span>
+          <span class="font-bold text-sm sm:text-base lg:text-lg tracking-tight text-white group-hover:text-red-400 transition block leading-none">My Studios</span>
+          <span class="text-[8px] sm:text-[9px] uppercase font-mono tracking-[0.18em] sm:tracking-[0.25em] text-slate-400 block mt-0.5 sm:mt-1">LIVE · PHOTO · CINEMA</span>
         </div>
       </a>
 
-      <!-- Center Navigation Pill Capsule -->
-      <nav class="hidden md:flex items-center gap-1 bg-[#12141f]/90 border border-white/10 px-4 py-1.5 rounded-full shadow-inner text-xs font-medium text-slate-300">
-        <a href="index.html" class="px-3 py-1 rounded-full text-white hover:text-red-400 transition">Events</a>
-        <a href="services.html" class="px-3 py-1 rounded-full hover:text-red-400 transition">Services</a>
-        <a href="#liveConsole" class="px-3 py-1 rounded-full hover:text-red-400 transition">Live Console</a>
-        <a href="#pipeline" class="px-3 py-1 rounded-full hover:text-red-400 transition">Workflow</a>
-        <a href="portfolio.html" class="px-3 py-1 rounded-full hover:text-red-400 transition">Showcase</a>
-        <a href="contact.html" class="px-3 py-1 rounded-full hover:text-red-400 transition">Contact</a>
-        <a href="admin.html" class="admin-nav-link px-3 py-1 rounded-full text-amber-400 hover:text-amber-300 transition hidden">Admin</a>
+      <!-- Center Navigation Pill Capsule (Visible on lg: 1024px+ to avoid tablet 768px layout overflow) -->
+      <nav class="hidden lg:flex items-center gap-1 bg-[#12141f]/90 border border-white/10 px-3 xl:px-4 py-1.5 rounded-full shadow-inner text-xs font-medium text-slate-300">
+        <a href="index.html" class="px-2.5 xl:px-3 py-1 rounded-full text-white bg-white/10 text-red-400 hover:text-red-400 transition">Events</a>
+        <a href="services.html" class="px-2.5 xl:px-3 py-1 rounded-full hover:text-red-400 transition">Services</a>
+        <a href="#liveConsole" class="px-2.5 xl:px-3 py-1 rounded-full hover:text-red-400 transition">Live Console</a>
+        <a href="#pipeline" class="px-2.5 xl:px-3 py-1 rounded-full hover:text-red-400 transition">Workflow</a>
+        <a href="portfolio.html" class="px-2.5 xl:px-3 py-1 rounded-full hover:text-red-400 transition">Showcase</a>
+        <a href="about.html" class="px-2.5 xl:px-3 py-1 rounded-full hover:text-red-400 transition">Facility</a>
+        <a href="contact.html" class="px-2.5 xl:px-3 py-1 rounded-full hover:text-red-400 transition">Contact</a>
+        <a href="admin.html" class="admin-nav-link px-2.5 xl:px-3 py-1 rounded-full text-amber-400 hover:text-amber-300 transition hidden">Admin</a>
       </nav>
 
-      <!-- Right Contact Info & Book Now Button -->
-      <div class="flex items-center gap-3 sm:gap-4">
-        <a href="tel:+919080208921" class="hidden lg:flex items-center gap-1.5 text-xs font-mono text-slate-300 hover:text-white transition">
+      <!-- Right Contact Info, Book Now Button, Profile & Mobile Hamburger -->
+      <div class="flex items-center gap-1.5 sm:gap-3 shrink-0">
+        <a href="tel:+919080208921" class="hidden xl:flex items-center gap-1.5 text-xs font-mono text-slate-300 hover:text-white transition">
           <span class="text-slate-500">📞</span>
           <span>+91 90802 08921</span>
         </a>
 
         <!-- Glowing Red Book Now Button -->
-        <a href="#bookingSection" class="px-4 sm:px-5 py-2.5 rounded-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white font-bold text-xs shadow-lg shadow-red-600/40 transition transform hover:-translate-y-0.5 flex items-center gap-1.5">
+        <a href="#bookingSection" class="px-3 sm:px-5 py-2 sm:py-2.5 rounded-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white font-bold text-[11px] sm:text-xs shadow-lg shadow-red-600/40 transition transform hover:-translate-y-0.5 flex items-center gap-1 sm:gap-1.5 shrink-0">
           <span>Book Now</span>
-          <span class="text-sm">→</span>
+          <span class="text-xs sm:text-sm">→</span>
         </a>
 
         <!-- Quick Profile & Role Switcher -->
-        <div class="relative">
-          <button id="userProfileMenuBtn" class="flex items-center gap-2 p-1 pr-2 rounded-full bg-slate-900 border border-slate-800 hover:border-red-500/50 transition">
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Avatar" class="header-user-avatar w-7 h-7 rounded-full object-cover border border-red-500/50">
+        <div class="relative shrink-0">
+          <button id="userProfileMenuBtn" aria-label="User Profile" class="flex items-center gap-1 sm:gap-2 p-1 pr-1.5 sm:pr-2 rounded-full bg-slate-900 border border-slate-800 hover:border-red-500/50 transition">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Avatar" class="header-user-avatar w-6 h-6 sm:w-7 sm:h-7 rounded-full object-cover border border-red-500/50">
             <svg class="w-3 h-3 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
@@ -124,8 +125,8 @@
           </div>
         </div>
 
-        <!-- Mobile Menu Toggle -->
-        <button id="mobileMenuToggle" class="p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 md:hidden">
+        <!-- Mobile & Tablet Menu Toggle (Visible below lg: 1024px) -->
+        <button id="mobileMenuToggle" aria-label="Toggle navigation menu" class="p-1.5 sm:p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700 transition lg:hidden shrink-0">
           <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -134,16 +135,41 @@
       </div>
     </div>
 
-    <!-- Mobile Drawer -->
-    <div id="mobileMenu" class="hidden md:hidden bg-[#07080c]/95 border-b border-slate-800 px-6 py-5 backdrop-blur-xl">
-      <nav class="flex flex-col gap-3 text-sm font-semibold text-slate-300">
-        <a href="index.html" class="text-red-400 py-1">Events & Hub</a>
-        <a href="services.html" class="hover:text-white py-1">Services & Soundstages</a>
-        <a href="#liveConsole" class="hover:text-white py-1">Live Broadcast Console</a>
-        <a href="#pipeline" class="hover:text-white py-1">Shot List Kanban</a>
-        <a href="portfolio.html" class="hover:text-white py-1">Showcase</a>
-        <a href="contact.html" class="hover:text-white py-1">Contact & Inquiries</a>
-        <a href="admin.html" class="admin-nav-link text-amber-400 py-1">Admin Command Center</a>
+    <!-- Mobile & Tablet Drawer Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-[#07080c]/98 border-b border-slate-800 px-6 py-5 backdrop-blur-2xl shadow-2xl transition-all">
+      <nav class="flex flex-col gap-2.5 text-sm font-semibold text-slate-300">
+        <a href="index.html" class="text-red-400 py-1.5 px-3 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-between">
+          <span>Events & Hub</span>
+          <span class="text-xs text-red-400 font-mono">01</span>
+        </a>
+        <a href="services.html" class="hover:text-red-400 py-1.5 px-3 rounded-lg hover:bg-white/5 transition flex items-center justify-between">
+          <span>Services & Soundstages</span>
+          <span class="text-xs text-slate-500 font-mono">02</span>
+        </a>
+        <a href="#liveConsole" class="hover:text-red-400 py-1.5 px-3 rounded-lg hover:bg-white/5 transition flex items-center justify-between">
+          <span>Live Console</span>
+          <span class="text-xs text-slate-500 font-mono">03</span>
+        </a>
+        <a href="#pipeline" class="hover:text-red-400 py-1.5 px-3 rounded-lg hover:bg-white/5 transition flex items-center justify-between">
+          <span>Production Pipeline</span>
+          <span class="text-xs text-slate-500 font-mono">04</span>
+        </a>
+        <a href="portfolio.html" class="hover:text-red-400 py-1.5 px-3 rounded-lg hover:bg-white/5 transition flex items-center justify-between">
+          <span>Showcase & Archive</span>
+          <span class="text-xs text-slate-500 font-mono">05</span>
+        </a>
+        <a href="about.html" class="hover:text-red-400 py-1.5 px-3 rounded-lg hover:bg-white/5 transition flex items-center justify-between">
+          <span>Facility & Infrastructure</span>
+          <span class="text-xs text-slate-500 font-mono">06</span>
+        </a>
+        <a href="contact.html" class="hover:text-red-400 py-1.5 px-3 rounded-lg hover:bg-white/5 transition flex items-center justify-between">
+          <span>Contact & Tour</span>
+          <span class="text-xs text-slate-500 font-mono">07</span>
+        </a>
+        <a href="admin.html" class="admin-nav-link text-amber-400 py-1.5 px-3 rounded-lg hover:bg-amber-500/10 transition hidden flex items-center justify-between">
+          <span>🛡️ Admin Dashboard</span>
+          <span class="text-xs text-amber-500 font-mono">08</span>
+        </a>
       </nav>
     </div>
   </header>
@@ -597,45 +623,45 @@
         </div>
       </div>
 
-      <div id="kanbanBoard" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
-        <div id="col_pre_prod" class="kanban-col-drop glass-panel rounded-2xl p-4 border border-slate-800 transition min-h-[440px]" data-stage-key="pre_prod">
-          <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-800">
+      <div id="kanbanBoard" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-4 items-start">
+        <div id="col_pre_prod" class="kanban-col-drop bg-[#0d0f1a]/85 rounded-2xl p-3 sm:p-3.5 border border-slate-800/90 transition" data-stage-key="pre_prod">
+          <div class="flex items-center justify-between pb-2.5 mb-2.5 border-b border-slate-800">
             <h3 class="font-heading font-bold text-xs uppercase text-slate-300">1. Pre-Event</h3>
             <span class="kanban-count-badge text-[10px] font-mono px-2 py-0.5 rounded-full bg-slate-800 text-slate-400">0</span>
           </div>
-          <div class="kanban-task-list min-h-[340px]"></div>
+          <div class="kanban-task-list min-h-[120px]"></div>
         </div>
 
-        <div id="col_scheduled" class="kanban-col-drop glass-panel rounded-2xl p-4 border border-slate-800 transition min-h-[440px]" data-stage-key="scheduled">
-          <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-800">
+        <div id="col_scheduled" class="kanban-col-drop bg-[#0d0f1a]/85 rounded-2xl p-3 sm:p-3.5 border border-slate-800/90 transition" data-stage-key="scheduled">
+          <div class="flex items-center justify-between pb-2.5 mb-2.5 border-b border-slate-800">
             <h3 class="font-heading font-bold text-xs uppercase text-amber-400">2. Live Shoot</h3>
             <span class="kanban-count-badge text-[10px] font-mono px-2 py-0.5 rounded-full bg-slate-800 text-amber-400">0</span>
           </div>
-          <div class="kanban-task-list min-h-[340px]"></div>
+          <div class="kanban-task-list min-h-[120px]"></div>
         </div>
 
-        <div id="col_post_prod" class="kanban-col-drop glass-panel rounded-2xl p-4 border border-slate-800 transition min-h-[440px]" data-stage-key="post_prod">
-          <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-800">
+        <div id="col_post_prod" class="kanban-col-drop bg-[#0d0f1a]/85 rounded-2xl p-3 sm:p-3.5 border border-slate-800/90 transition" data-stage-key="post_prod">
+          <div class="flex items-center justify-between pb-2.5 mb-2.5 border-b border-slate-800">
             <h3 class="font-heading font-bold text-xs uppercase text-red-400">3. Post-Edit</h3>
             <span class="kanban-count-badge text-[10px] font-mono px-2 py-0.5 rounded-full bg-slate-800 text-red-400">0</span>
           </div>
-          <div class="kanban-task-list min-h-[340px]"></div>
+          <div class="kanban-task-list min-h-[120px]"></div>
         </div>
 
-        <div id="col_color_grade" class="kanban-col-drop glass-panel rounded-2xl p-4 border border-slate-800 transition min-h-[440px]" data-stage-key="color_grade">
-          <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-800">
+        <div id="col_color_grade" class="kanban-col-drop bg-[#0d0f1a]/85 rounded-2xl p-3 sm:p-3.5 border border-slate-800/90 transition" data-stage-key="color_grade">
+          <div class="flex items-center justify-between pb-2.5 mb-2.5 border-b border-slate-800">
             <h3 class="font-heading font-bold text-xs uppercase text-purple-400">4. Cinema Color</h3>
             <span class="kanban-count-badge text-[10px] font-mono px-2 py-0.5 rounded-full bg-slate-800 text-purple-400">0</span>
           </div>
-          <div class="kanban-task-list min-h-[340px]"></div>
+          <div class="kanban-task-list min-h-[120px]"></div>
         </div>
 
-        <div id="col_published" class="kanban-col-drop glass-panel rounded-2xl p-4 border border-slate-800 transition min-h-[440px]" data-stage-key="published">
-          <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-800">
+        <div id="col_published" class="kanban-col-drop bg-[#0d0f1a]/85 rounded-2xl p-3 sm:p-3.5 border border-slate-800/90 transition" data-stage-key="published">
+          <div class="flex items-center justify-between pb-2.5 mb-2.5 border-b border-slate-800">
             <h3 class="font-heading font-bold text-xs uppercase text-emerald-400">5. Delivered</h3>
             <span class="kanban-count-badge text-[10px] font-mono px-2 py-0.5 rounded-full bg-slate-800 text-emerald-400">0</span>
           </div>
-          <div class="kanban-task-list min-h-[340px]"></div>
+          <div class="kanban-task-list min-h-[120px]"></div>
         </div>
       </div>
 
