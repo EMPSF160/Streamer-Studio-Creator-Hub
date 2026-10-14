@@ -277,3 +277,108 @@ h1, h2, h3, h4, .font-heading {
 .toast-item.error { border-left-color: var(--accent-rose); }
 .toast-item.warning { border-left-color: var(--accent-amber); }
 .toast-item.info { border-left-color: var(--accent-cyan); }
+
+/* ==========================================================================
+   Header Responsive Layout Fixes (Tab 768px & Mobile 360px)
+   ========================================================================== */
+
+/* On tablet (< 1024px including 768px), keep like mobile view:
+   - Hide pill nav completely
+   - Show hamburger toggle
+*/
+@media (max-width: 1023px) {
+  header nav.header-pill-nav,
+  header .header-pill-nav,
+  header > div > nav:not(#mobileMenu nav):not(#userProfileDropdown nav) {
+    display: none !important;
+  }
+  #mobileMenuToggle {
+    display: inline-flex !important;
+  }
+}
+
+/* On desktop (>= 1024px), show pill nav, hide mobile hamburger */
+@media (min-width: 1024px) {
+  header nav.header-pill-nav,
+  header .header-pill-nav,
+  header > div > nav:not(#mobileMenu nav):not(#userProfileDropdown nav) {
+    display: flex !important;
+  }
+  #mobileMenuToggle {
+    display: none !important;
+  }
+  #mobileMenu {
+    display: none !important;
+  }
+}
+
+/* Mobile 360px viewport safety - prevent header horizontal overflow */
+@media (max-width: 480px) {
+  header .max-w-7xl {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+}
+
+/* ==========================================================================
+   Production Pipeline Kanban - Compact Cards (No Extra Dead Space)
+   ========================================================================== */
+.kanban-col-drop {
+  min-height: auto !important;
+  height: auto !important;
+}
+
+.kanban-task-list {
+  min-height: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.kanban-task-list:empty {
+  min-height: 52px;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kanban-task-list:empty::after {
+  content: 'Drop shot here';
+  font-size: 10px;
+  font-family: var(--font-mono);
+  color: #64748b;
+  letter-spacing: 0.05em;
+}
+
+/* Drag over highlight */
+.kanban-col-drop.drag-over {
+  border-color: rgba(229, 9, 20, 0.7) !important;
+  background: rgba(229, 9, 20, 0.05) !important;
+}
+
+/* ==========================================================================
+   Map & Social Badges
+   ========================================================================== */
+.map-social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(14, 17, 28, 0.9);
+  color: #cbd5e1;
+}
+.map-social-btn:hover {
+  transform: translateY(-1px);
+  color: #ffffff;
+  border-color: rgba(229, 9, 20, 0.5);
+  box-shadow: 0 4px 15px -3px rgba(229, 9, 20, 0.25);
+}
+

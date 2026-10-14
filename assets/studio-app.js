@@ -514,7 +514,7 @@ function initKanbanWorkflow() {
       if (!list) return;
 
       const card = document.createElement('div');
-      card.className = 'bg-[#121524] hover:bg-[#181c2f] p-3 rounded-xl border border-slate-700/60 hover:border-red-500/60 transition-all shadow-md group cursor-grab mb-2.5';
+      card.className = 'bg-[#121524] hover:bg-[#181c2f] p-3 rounded-xl border border-slate-700/60 hover:border-red-500/60 transition-all shadow-md group cursor-grab';
       card.setAttribute('draggable', 'true');
       card.setAttribute('data-task-id', task.id);
 

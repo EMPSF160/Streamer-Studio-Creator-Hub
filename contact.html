@@ -43,23 +43,23 @@
 
   <!-- Header -->
   <header class="fixed top-0 inset-x-0 z-50 bg-[#07080c]/90 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-2 sm:gap-4">
+    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-1 sm:gap-4">
       
       <!-- Brand Logo -->
-      <a href="index.html" class="flex items-center gap-2 sm:gap-3 group shrink-0">
-        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-red-600 to-red-800 p-0.5 flex items-center justify-center shadow-lg shadow-red-600/30 group-hover:scale-105 transition shrink-0">
+      <a href="index.html" class="flex items-center gap-1.5 sm:gap-3 group shrink-0 min-w-0">
+        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-red-600 to-red-800 p-0.5 flex items-center justify-center shadow-lg shadow-red-600/30 group-hover:scale-105 transition shrink-0">
           <div class="w-full h-full bg-[#110507] rounded-[10px] flex items-center justify-center">
             <span class="text-red-500 font-bold text-xs sm:text-sm">((•))</span>
           </div>
         </div>
-        <div>
-          <span class="font-bold text-sm sm:text-base lg:text-lg tracking-tight text-white group-hover:text-red-400 transition block leading-none">My Studios</span>
-          <span class="text-[8px] sm:text-[9px] uppercase font-mono tracking-[0.18em] sm:tracking-[0.25em] text-slate-400 block mt-0.5 sm:mt-1">LIVE · PHOTO · CINEMA</span>
+        <div class="min-w-0">
+          <span class="font-bold text-xs sm:text-base lg:text-lg tracking-tight text-white group-hover:text-red-400 transition block leading-none">My Studios</span>
+          <span class="text-[7.5px] sm:text-[9px] uppercase font-mono tracking-[0.08em] sm:tracking-[0.25em] text-slate-400 block mt-0.5 sm:mt-1 truncate max-w-[105px] sm:max-w-none">LIVE · PHOTO · CINEMA</span>
         </div>
       </a>
 
-      <!-- Pill Nav (Visible on lg: 1024px+) -->
-      <nav class="hidden lg:flex items-center gap-1 bg-[#12141f]/90 border border-white/10 px-3 xl:px-4 py-1.5 rounded-full shadow-inner text-xs font-medium text-slate-300">
+      <!-- Pill Nav (Visible on lg: 1024px+; hidden on tab 768px to keep mobile view) -->
+      <nav class="header-pill-nav hidden lg:flex items-center gap-1 bg-[#12141f]/90 border border-white/10 px-3 xl:px-4 py-1.5 rounded-full shadow-inner text-xs font-medium text-slate-300">
         <a href="index.html" class="px-2.5 xl:px-3 py-1 rounded-full hover:text-red-400 transition">Events</a>
         <a href="services.html" class="px-2.5 xl:px-3 py-1 rounded-full hover:text-red-400 transition">Services</a>
         <a href="index.html#liveConsole" class="px-2.5 xl:px-3 py-1 rounded-full hover:text-red-400 transition">Live Console</a>
@@ -71,23 +71,23 @@
       </nav>
 
       <!-- Right Action Group -->
-      <div class="flex items-center gap-1.5 sm:gap-3 shrink-0">
+      <div class="flex items-center gap-1 sm:gap-2.5 shrink-0">
         <a href="tel:+919080208921" class="hidden xl:flex items-center gap-1.5 text-xs font-mono text-slate-300 hover:text-white transition">
           <span class="text-slate-500">📞</span>
           <span>+91 90802 08921</span>
         </a>
 
         <!-- Glowing Red Book Now Button -->
-        <a href="index.html#bookingSection" class="px-3 sm:px-5 py-2 sm:py-2.5 rounded-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white font-bold text-[11px] sm:text-xs shadow-lg shadow-red-600/40 transition transform hover:-translate-y-0.5 flex items-center gap-1 sm:gap-1.5 shrink-0">
+        <a href="index.html#bookingSection" class="px-2.5 sm:px-5 py-1.5 sm:py-2.5 rounded-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white font-bold text-[10px] sm:text-xs shadow-lg shadow-red-600/40 transition transform hover:-translate-y-0.5 flex items-center gap-1 shrink-0">
           <span>Book Now</span>
-          <span class="text-xs sm:text-sm">→</span>
+          <span class="text-[10px] sm:text-xs">→</span>
         </a>
 
         <!-- Quick Profile & Role Switcher -->
         <div class="relative shrink-0">
-          <button id="userProfileMenuBtn" aria-label="User Profile" class="flex items-center gap-1 sm:gap-2 p-1 pr-1.5 sm:pr-2 rounded-full bg-slate-900 border border-slate-800 hover:border-red-500/50 transition">
+          <button id="userProfileMenuBtn" aria-label="User Profile" class="flex items-center gap-1 p-0.5 sm:p-1 pr-1 sm:pr-2 rounded-full bg-slate-900 border border-slate-800 hover:border-red-500/50 transition">
             <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Avatar" class="header-user-avatar w-6 h-6 sm:w-7 sm:h-7 rounded-full object-cover border border-red-500/50">
-            <svg class="w-3 h-3 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg class="w-2.5 h-2.5 sm:w-3 sm:h-3 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
@@ -125,7 +125,7 @@
 
         <!-- Mobile & Tablet Menu Toggle (Visible below lg: 1024px) -->
         <button id="mobileMenuToggle" aria-label="Toggle navigation menu" class="p-1.5 sm:p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700 transition lg:hidden shrink-0">
-          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
@@ -261,6 +261,45 @@
             <div class="absolute bottom-3 right-3">
               <a id="getDirectionsBtn" href="https://maps.google.com/?q=OMR+Chennai+Tamil+Nadu" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-xl bg-[#07080c]/90 border border-white/20 text-white font-mono text-[11px] hover:border-red-500 hover:text-red-400 transition shadow-lg backdrop-blur-md flex items-center gap-1.5">
                 <span>↗ Open in Maps</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Map Social & Navigation Quick Links (Requirement 4) -->
+          <div class="pt-3 border-t border-slate-800/80">
+            <div class="flex items-center justify-between mb-2.5">
+              <span class="text-[10px] font-mono uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+                <span class="text-red-500">📍</span> Map Social & Geo Connect
+              </span>
+              <span class="text-[9px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Live Studio Coordinates</span>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+              <a id="mapSocialGmaps" href="https://maps.google.com/?q=OMR+Chennai+Tamil+Nadu" target="_blank" rel="noopener noreferrer" class="map-social-btn flex items-center justify-center sm:justify-start gap-2 hover:border-red-500/60 group">
+                <svg class="w-4 h-4 text-red-500 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0C7.58 0 4 3.58 4 8c0 5.25 8 16 8 16s8-10.75 8-16c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/>
+                </svg>
+                <span class="truncate group-hover:text-white">Google Maps</span>
+              </a>
+
+              <a id="mapSocialWhatsapp" href="https://wa.me/919080208921?text=Hi%20My%20Studios%2C%20I%20need%20directions%20or%20studio%20tour%20details." target="_blank" rel="noopener noreferrer" class="map-social-btn flex items-center justify-center sm:justify-start gap-2 hover:border-emerald-500/60 group">
+                <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+                </svg>
+                <span class="truncate group-hover:text-white">WhatsApp</span>
+              </a>
+
+              <a href="https://instagram.com/explore/locations" target="_blank" rel="noopener noreferrer" class="map-social-btn flex items-center justify-center sm:justify-start gap-2 hover:border-pink-500/60 group">
+                <svg class="w-4 h-4 text-pink-400 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                <span class="truncate group-hover:text-white">Instagram Geo</span>
+              </a>
+
+              <a href="https://t.me/MyStudiosLive" target="_blank" rel="noopener noreferrer" class="map-social-btn flex items-center justify-center sm:justify-start gap-2 hover:border-sky-500/60 group">
+                <svg class="w-4 h-4 text-sky-400 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                </svg>
+                <span class="truncate group-hover:text-white">Telegram Map</span>
               </a>
             </div>
           </div>
@@ -454,6 +493,7 @@
       const mapFrame = document.getElementById('studioMapFrame');
       const addressEl = document.getElementById('currentMapAddress');
       const dirBtn = document.getElementById('getDirectionsBtn');
+      const gmapsSocial = document.getElementById('mapSocialGmaps');
       const btnChennai = document.getElementById('btnMapChennai');
       const btnBangalore = document.getElementById('btnMapBangalore');
 
@@ -461,12 +501,14 @@
         mapFrame.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124443.32839958994!2d80.14728514120353!3d12.917024344440051!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525c38980b1e19%3A0xb35a0928a9b70868!2sOMR%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin";
         addressEl.textContent = "OMR IT Expressway / ECR Broadcast Zone, Chennai, Tamil Nadu";
         dirBtn.href = "https://maps.google.com/?q=OMR+Chennai+Tamil+Nadu";
+        if (gmapsSocial) gmapsSocial.href = "https://maps.google.com/?q=OMR+Chennai+Tamil+Nadu";
         btnChennai.className = "px-3 py-1 rounded-lg bg-red-600 text-white font-bold transition shadow";
         btnBangalore.className = "px-3 py-1 rounded-lg text-slate-400 hover:text-white transition";
       } else {
         mapFrame.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62208.76127110996!2d77.60453303649514!3d12.9715987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sIndiranagar%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin";
         addressEl.textContent = "Indiranagar Broadcast & Soundstage Hub, Bengaluru, Karnataka";
         dirBtn.href = "https://maps.google.com/?q=Indiranagar+Bengaluru+Karnataka";
+        if (gmapsSocial) gmapsSocial.href = "https://maps.google.com/?q=Indiranagar+Bengaluru+Karnataka";
         btnBangalore.className = "px-3 py-1 rounded-lg bg-red-600 text-white font-bold transition shadow";
         btnChennai.className = "px-3 py-1 rounded-lg text-slate-400 hover:text-white transition";
       }
