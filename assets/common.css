@@ -295,6 +295,15 @@ h1, h2, h3, h4, .font-heading {
   #mobileMenuToggle {
     display: inline-flex !important;
   }
+  #mobileMenu:not(.hidden) {
+    display: block !important;
+  }
+}
+
+#mobileMenu {
+  max-height: calc(100dvh - 5rem);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* On desktop (>= 1024px), show pill nav, hide mobile hamburger */

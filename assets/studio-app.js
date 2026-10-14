@@ -29,7 +29,9 @@ function initGlobalHeader() {
   const quickRoleBtns = document.querySelectorAll('.quick-role-switch');
 
   function renderUserHeader() {
+    if (!store || typeof store.getCurrentUser !== 'function') return;
     const user = store.getCurrentUser();
+    if (!user) return;
     const avatarEls = document.querySelectorAll('.header-user-avatar');
     const nameEls = document.querySelectorAll('.header-user-name');
     const roleEls = document.querySelectorAll('.header-user-role');
@@ -65,26 +67,65 @@ function initGlobalHeader() {
     });
   }
 
-  // Mobile Menu Toggle
+  // Mobile & Tablet Menu Toggle
   const mobileMenuToggle = document.getElementById('mobileMenuToggle');
   const mobileMenu = document.getElementById('mobileMenu');
 
   if (mobileMenuToggle && mobileMenu) {
+    const updateMenuVisualState = (isOpen) => {
+      if (isOpen) {
+        mobileMenu.classList.remove('hidden');
+        mobileMenuToggle.setAttribute('aria-expanded', 'true');
+        mobileMenuToggle.setAttribute('aria-label', 'Close navigation menu');
+        const svg = mobileMenuToggle.querySelector('svg');
+        if (svg) {
+          svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />';
+        }
+      } else {
+        mobileMenu.classList.add('hidden');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        mobileMenuToggle.setAttribute('aria-label', 'Open navigation menu');
+        const svg = mobileMenuToggle.querySelector('svg');
+        if (svg) {
+          svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
+        }
+      }
+    };
+
     mobileMenuToggle.addEventListener('click', (e) => {
+      e.preventDefault();
       e.stopPropagation();
-      mobileMenu.classList.toggle('hidden');
+      const isCurrentlyHidden = mobileMenu.classList.contains('hidden');
+      updateMenuVisualState(isCurrentlyHidden);
     });
 
     // Close when clicking links inside mobileMenu
     mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
+        updateMenuVisualState(false);
       });
     });
 
+    // Close on outside click
     document.addEventListener('click', (e) => {
       if (!mobileMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-        mobileMenu.classList.add('hidden');
+        if (!mobileMenu.classList.contains('hidden')) {
+          updateMenuVisualState(false);
+        }
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+        updateMenuVisualState(false);
+      }
+    });
+
+    // Close when resized to desktop (>= 1024px)
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1024 && !mobileMenu.classList.contains('hidden')) {
+        updateMenuVisualState(false);
       }
     });
   }
@@ -1122,8 +1163,6 @@ function initThemeAndAnimations() {
   const themeIcon = document.getElementById('themeIcon');
   const mobileThemeToggle = document.getElementById('mobileThemeToggle');
   const mobileThemeIcon = document.getElementById('mobileThemeIcon');
-  const mobileMenuBtn = document.getElementById('mobileMenuToggle');
-  const mobileMenu = document.getElementById('mobileMenu');
 
   function applyTheme(isDark) {
     if (isDark) {
@@ -1152,11 +1191,6 @@ function initThemeAndAnimations() {
   mobileThemeToggle?.addEventListener('click', () => {
     const isDark = root.classList.contains('dark');
     applyTheme(!isDark);
-  });
-
-  // Mobile menu
-  mobileMenuBtn?.addEventListener('click', () => {
-    mobileMenu?.classList.toggle('hidden');
   });
 
   // Scroll animations
